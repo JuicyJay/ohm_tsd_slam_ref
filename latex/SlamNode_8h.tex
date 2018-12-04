@@ -1,0 +1,62 @@
+\hypertarget{SlamNode_8h}{\section{src/\-Slam\-Node.h File Reference}
+\label{SlamNode_8h}\index{src/\-Slam\-Node.\-h@{src/\-Slam\-Node.\-h}}
+}
+{\ttfamily \#include $<$ros/ros.\-h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}obvision/reconstruct/grid/\-Tsd\-Grid.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}obvision/reconstruct/grid/\-Sensor\-Polar2\-D.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}obcore/base/\-Logger.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Thread\-Localize.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ohm\-\_\-tsd\-\_\-slam\-\_\-ref/\-Start\-Stop\-S\-L\-A\-M.\-h\char`\"{}}\\*
+Include dependency graph for Slam\-Node.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SlamNode_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SlamNode_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structohm__tsd__slam__ref_1_1TaggedSubscriber}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Tagged\-Subscriber}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structohm__tsd__slam__ref_1_1TaggedSubscriber}{Tagged\-Subscriber} struct creates new datatype of subscribers for ros communication. \end{DoxyCompactList}\item 
+class \hyperlink{classohm__tsd__slam__ref_1_1SlamNode}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}
+\begin{DoxyCompactList}\small\item\em main node management of 2\-D slam, contains sub classes and ros interface \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceohm__tsd__slam__ref}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{SlamNode_8h_a7f516bedc9360ce81c38b2b6fbd1a5ff}{I\-N\-I\-T\-\_\-\-P\-S\-H\-S}~1
+\begin{DoxyCompactList}\small\item\em I\-N\-I\-T\-\_\-\-P\-S\-H\-S number of initial pushes into the grid. \end{DoxyCompactList}\item 
+\#define \hyperlink{SlamNode_8h_a502d892a0b86363c94e2f11fb2370346}{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S}~1
+\begin{DoxyCompactList}\small\item\em T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S amount of time (ms) waiting for thread to terminate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{SlamNode_8h_a7f516bedc9360ce81c38b2b6fbd1a5ff}{\index{Slam\-Node.\-h@{Slam\-Node.\-h}!I\-N\-I\-T\-\_\-\-P\-S\-H\-S@{I\-N\-I\-T\-\_\-\-P\-S\-H\-S}}
+\index{I\-N\-I\-T\-\_\-\-P\-S\-H\-S@{I\-N\-I\-T\-\_\-\-P\-S\-H\-S}!SlamNode.h@{Slam\-Node.\-h}}
+\subsubsection[{I\-N\-I\-T\-\_\-\-P\-S\-H\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-I\-T\-\_\-\-P\-S\-H\-S~1}}\label{SlamNode_8h_a7f516bedc9360ce81c38b2b6fbd1a5ff}
+
+
+I\-N\-I\-T\-\_\-\-P\-S\-H\-S number of initial pushes into the grid. 
+
+\hypertarget{SlamNode_8h_a502d892a0b86363c94e2f11fb2370346}{\index{Slam\-Node.\-h@{Slam\-Node.\-h}!T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S@{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S}}
+\index{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S@{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S}!SlamNode.h@{Slam\-Node.\-h}}
+\subsubsection[{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S~1}}\label{SlamNode_8h_a502d892a0b86363c94e2f11fb2370346}
+
+
+T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S amount of time (ms) waiting for thread to terminate. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]in Thread\-Grid wird im Destruktor thread\-::join() aus boost aufgerufen, um auf Beendigung des Threads zu warten. Slam\-Node erbt aber nicht von Thread\-S\-L\-A\-M, also besitzt es auch kein boost object thread. wäre es denkbar das auch damit zu lösen anstatt diese Zeit hier festzusetzen? \end{DoxyRefDesc}

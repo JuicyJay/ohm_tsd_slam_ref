@@ -1,0 +1,663 @@
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize}{\section{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize Class Reference}
+\label{classohm__tsd__slam__ref_1_1ThreadLocalize}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+}
+
+
+{\ttfamily \#include $<$Thread\-Localize.\-h$>$}
+
+
+
+Inheritance diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classohm__tsd__slam__ref_1_1ThreadLocalize__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classohm__tsd__slam__ref_1_1ThreadLocalize__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a6664fba91fb551b13cf721638b55f36e}{Thread\-Localize} (obvious\-::\-Tsd\-Grid $\ast$grid, \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping}{Thread\-Mapping} $\ast$mapper, ros\-::\-Node\-Handle $\ast$nh, std\-::string name\-Space, const double x\-Offset, const double y\-Offset)
+\item 
+virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}{$\sim$\-Thread\-Localize} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab93dfc8a688c178b641ef5deec94bf91}{laser\-Call\-Back} (const sensor\-\_\-msgs\-::\-Laser\-Scan \&scan)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}{event\-Loop} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156f}{Enum\-Reg\-Modes} \{ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa4c2ccd40e418593ae90c9844a7e8b27b}{I\-C\-P} = 0, 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156faa5d6bcb6b063925c8ceee9660ba6fe82}{E\-X\-P} = 1, 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa5fca603cf985a7804238323fc6261c45}{P\-D\-F} = 2, 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fae6fb70bc18328170438ececea919a178}{T\-S\-D} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_aec7ad646c46fd6809d7606d02388d26f}{init} (const sensor\-\_\-msgs\-::\-Laser\-Scan \&scan)
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a2f2f07578bdc28b9d217f79b8d37e2b6}{calc\-Angle} (obvious\-::\-Matrix $\ast$T)
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a42b20cc96002fb42347aa292a8321589}{is\-Pose\-Change\-Significant} (obvious\-::\-Matrix $\ast$last\-Pose, obvious\-::\-Matrix $\ast$cur\-Pose)
+\item 
+obvious\-::\-Matrix \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a0b89c7cf90db8719b2324cce13b43e5b}{do\-Registration} (obvious\-::\-Sensor\-Polar2\-D $\ast$sensor, obvious\-::\-Matrix $\ast$M, obvious\-::\-Matrix $\ast$Mvalid, obvious\-::\-Matrix $\ast$N, obvious\-::\-Matrix $\ast$Nvalid, obvious\-::\-Matrix $\ast$S, obvious\-::\-Matrix $\ast$Svalid)
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b03610d7b3f56c24c733e2cc1f922bc}{is\-Registration\-Error} (obvious\-::\-Matrix $\ast$T, const double trns\-Max, const double rot\-Max)
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a7e09fab6884bb9752525a5b9a3223f48}{send\-Transform} (obvious\-::\-Matrix $\ast$T)
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a3b98400814080c99c6cf5d6513b85b8d}{send\-Nan\-Transform} ()
+\item 
+obvious\-::\-Matrix \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a8b5b655705c1c06398b725d37815084b}{mask\-Matrix} (obvious\-::\-Matrix $\ast$Mat, bool $\ast$mask, unsigned int mask\-Size, unsigned int valid\-Points)
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a9ebe616b6e1af232d3663ea7ba8af19e}{reduce\-Resolution} (bool $\ast$const mask\-In, obvious\-::\-Matrix $\ast$mat\-In, bool $\ast$const mask\-Out, obvious\-::\-Matrix $\ast$mat\-Out, unsigned int points\-In, unsigned int points\-Out, unsigned int reduction\-Factor)
+\item 
+tf\-::\-Transform \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_acc11e43687732ffe8c81dfbeb293a6bc}{obviously\-Matrix3x3\-To\-Tf} (obvious\-::\-Matrix \&ob)
+\item 
+obvious\-::\-Matrix \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_aad3131cd2ef3eb0de3e79ed0d58a4190}{tf\-To\-Obviously\-Matrix3x3} (const tf\-::\-Transform \&tf)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a339ec43d3843e2049120afd424a636f7}{\-\_\-nh}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping}{Thread\-Mapping} \& \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a73a2ed65f92fbf13e82e7b00e8354c13}{\-\_\-mapper}
+\item 
+obvious\-::\-Sensor\-Polar2\-D $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad08189f4b2c11aa3f2d75384d89088f8}{\-\_\-sensor}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a936d63f4a95f0102070be527a2636f8f}{\-\_\-initialized}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a09c5ac4604a298725984646e683aa600}{\-\_\-grid\-Width}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_af9493e2cbbce37f693bbe632374d0d2a}{\-\_\-grid\-Height}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a74254a193f989fd948778e780a340b9c}{\-\_\-grid\-Off\-Set\-X}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab12390e3a1727f9d1c47fc96747bd96c}{\-\_\-grid\-Off\-Set\-Y}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a2bfa898645a8b505fbc317829da277cf}{\-\_\-x\-Offset}
+\item 
+const double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_afd9255f70ea924f91b0e628d20245803}{\-\_\-y\-Offset}
+\item 
+std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ae67e48692aef6eadb8a12c2c89362c94}{\-\_\-name\-Space}
+\item 
+ros\-::\-Time \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_acf1975963191b84dd1fda914a4cc15ae}{\-\_\-stamp\-Laser}
+\item 
+Odometry\-Analyzer $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}{\-\_\-odom\-Analyzer}
+\item 
+boost\-::mutex \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}{\-\_\-data\-Mutex}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a943d9246b84ff11c2c01f7af1a3730f9}{\-\_\-trns\-Max}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a59316ea269ecac73e614061fa3f618df}{\-\_\-trns\-Velocity\-Max}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4eec8ac0c4da6cc90fe5dcc22cee2447}{\-\_\-rot\-Max}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab72a7278c4ce34dab852571b7c83705c}{\-\_\-rot\-Velocity\-Max}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156f}{Enum\-Reg\-Modes} \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ace3a4195d80299e3eb37be6c3a06a218}{\-\_\-reg\-Mode}
+\item 
+unsigned int \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a756d269b7f0782d3e789f29bfc7d838d}{\-\_\-ran\-Trials}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4af9a78a5c16b1a4966b1e28a27b}{\-\_\-ran\-Eps\-Thresh}
+\item 
+unsigned int \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a33d533907a160e94d357ecd3d8226f9b}{\-\_\-ran\-Size\-Ctrl\-Set}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a5ab8f03d41a726e561c95be6d6f090a7}{\-\_\-ran\-Phi\-Max}
+\item 
+std\-::deque\\*
+$<$ sensor\-\_\-msgs\-::\-Laser\-Scan $\ast$ $>$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab4560c87e6163708f39d4cdfc2f8a074}{\-\_\-laser\-Data}
+\item 
+double $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a3339b24a6b047266ceda1c160c79b1de}{\-\_\-model\-Coords}
+\item 
+double $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab787c1c72a9d4ac14e08c05519530e63}{\-\_\-model\-Normals}
+\item 
+bool $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a00672731c254282c9e469636245b49ba}{\-\_\-mask\-M}
+\item 
+double $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a44d298a710aa05043423e8894e8454a0}{\-\_\-scene}
+\item 
+bool $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a0f697cbf384346d1c13504830a83d768}{\-\_\-mask\-S}
+\item 
+obvious\-::\-Ray\-Cast\-Polar2\-D $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_acf45081cf4d42221dbc924b9fd6a1384}{\-\_\-ray\-Caster}
+\item 
+obvious\-::\-Pair\-Assignment $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a45c7b109a3a9f22e0c60111c58eb0dd3}{\-\_\-assigner}
+\item 
+obvious\-::\-Out\-Of\-Bounds\-Filter2\-D $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_aac86a10eecf70da80d5198e9296e2aea}{\-\_\-filter\-Bounds}
+\item 
+obvious\-::\-Distance\-Filter $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a34e17bd9ddbcf1431feb2cca272d8d69}{\-\_\-filter\-Dist}
+\item 
+obvious\-::\-Reciprocal\-Filter $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4444f42e17414907a35919adc4904268}{\-\_\-filter\-Reciprocal}
+\item 
+obvious\-::\-I\-Rigid\-Estimator $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a34dc7fcb1cc798542270309014f09b93}{\-\_\-estimator}
+\item 
+obvious\-::\-Icp $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a03e76d4fd6e599eb2e508dde1553c278}{\-\_\-icp}
+\item 
+obvious\-::\-Random\-Normal\-Matching $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a527f8668ebe51a6bc7cadba7075c8c3f}{\-\_\-\-Random\-Normal\-Matcher}
+\item 
+obvious\-::\-P\-D\-F\-Matching $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad9d5e74c4f7b20dcb89e108ad8cfbe08}{\-\_\-\-P\-D\-F\-Matcher}
+\item 
+obvious\-::\-T\-S\-D\-\_\-\-P\-D\-F\-Matching $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a8c7ca5e711fc2a346d130c9074b4f14d}{\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher}
+\item 
+obvious\-::\-Matrix $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b1c9b9fbbf202c5532755553cb42964}{\-\_\-last\-Pose}
+\item 
+ros\-::\-Publisher \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4072511df787f573ce74945a3021cd70}{\-\_\-pose\-Pub}
+\item 
+geometry\-\_\-msgs\-::\-Pose\-Stamped \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a53b8418b5cb138095c170ee523c5e433}{\-\_\-pose\-Stamped}
+\item 
+tf\-::\-Transform\-Broadcaster \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a422982c64baaa0ea6b2e259c78bb14f8}{\-\_\-tf\-Broadcaster}
+\item 
+tf\-::\-Transform\-Listener \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a224fab0e74f4e79a3bd7477c7ba67927}{\-\_\-tf\-Listener}
+\item 
+tf\-::\-Stamped\-Transform \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6eb4ec2cbb72976a751195aaa87b230}{\-\_\-tf\-Reader}
+\item 
+tf\-::\-Stamped\-Transform \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a58c3e63ca51b4f667361138ca9612a43}{\-\_\-tf}
+\item 
+tf\-::\-Transform \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a865325fdc2badfde0512622d52d60f46}{\-\_\-tf\-Laser}
+\item 
+std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a49f36ec368f39a906125435adb7fa231}{\-\_\-tf\-Footprint\-Frame\-Id}
+\item 
+std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4f3c79f1893a406885983bd8984954e2}{\-\_\-tf\-Odom\-Frame\-Id}
+\item 
+std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab83a495abfe38788855cd283334052ee}{\-\_\-tf\-Base\-Frame\-Id}
+\item 
+std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a15312866770a11e59f0e2e260a5d8c05}{\-\_\-tf\-Child\-Frame\-Id}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a50a25580c50a3b14d04a548416142d6c}{\-\_\-use\-Odom\-Rescue}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a60894678d5815e42124c78eef219cf8b}{\-\_\-odom\-Tf\-Is\-Valid}
+\item 
+ros\-::\-Duration \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a5f43425ab2bb540e72205ef83e37d4ff}{\-\_\-wait\-For\-Odom\-Tf}
+\item 
+ros\-::\-Time \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a3993fb6424dd9af667ddf0b14cdf2fe4}{\-\_\-stamp\-Laser\-Old}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a176899f67fbf706a756853a8af968fd5}{\-\_\-reverse\-Scan}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a6170ca0dd6108536689c4dab3f7425f6}{\-\_\-las\-Min\-Range}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!Enum\-Reg\-Modes@{Enum\-Reg\-Modes}}
+\index{Enum\-Reg\-Modes@{Enum\-Reg\-Modes}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{Enum\-Reg\-Modes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-Enum\-Reg\-Modes}\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\-C\-P@{I\-C\-P}!ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!I\-C\-P@{I\-C\-P}}\item[{\em 
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa4c2ccd40e418593ae90c9844a7e8b27b}{I\-C\-P}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa4c2ccd40e418593ae90c9844a7e8b27b}
+}]Registration with I\-C\-P only. \index{E\-X\-P@{E\-X\-P}!ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!E\-X\-P@{E\-X\-P}}\item[{\em 
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156faa5d6bcb6b063925c8ceee9660ba6fe82}{E\-X\-P}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156faa5d6bcb6b063925c8ceee9660ba6fe82}
+}]\index{P\-D\-F@{P\-D\-F}!ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!P\-D\-F@{P\-D\-F}}\item[{\em 
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa5fca603cf985a7804238323fc6261c45}{P\-D\-F}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fa5fca603cf985a7804238323fc6261c45}
+}]\index{T\-S\-D@{T\-S\-D}!ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!T\-S\-D@{T\-S\-D}}\item[{\em 
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fae6fb70bc18328170438ececea919a178}{T\-S\-D}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac5ed59506607265dc4c38a64cf36156fae6fb70bc18328170438ececea919a178}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a6664fba91fb551b13cf721638b55f36e}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!Thread\-Localize@{Thread\-Localize}}
+\index{Thread\-Localize@{Thread\-Localize}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{Thread\-Localize}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-Thread\-Localize (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Tsd\-Grid $\ast$}]{grid, }
+\item[{{\bf Thread\-Mapping} $\ast$}]{mapper, }
+\item[{ros\-::\-Node\-Handle $\ast$}]{nh, }
+\item[{std\-::string}]{name\-Space, }
+\item[{const double}]{x\-Offset, }
+\item[{const double}]{y\-Offset}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a6664fba91fb551b13cf721638b55f36e}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em grid} & Pointer to representation \\
+\hline
+{\em mapper} & Pointer to mapping thread instance \\
+\hline
+{\em nh} & pointer to main node handle \\
+\hline
+{\em name\-Space} & Namespace of this localization thread \\
+\hline
+{\em x\-Offset} & Origin x position \\
+\hline
+{\em y\-Offset} & Origin y position \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!$\sim$\-Thread\-Localize@{$\sim$\-Thread\-Localize}}
+\index{$\sim$\-Thread\-Localize@{$\sim$\-Thread\-Localize}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{$\sim$\-Thread\-Localize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::$\sim$\-Thread\-Localize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a2f2f07578bdc28b9d217f79b8d37e2b6}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!calc\-Angle@{calc\-Angle}}
+\index{calc\-Angle@{calc\-Angle}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{calc\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::calc\-Angle (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix $\ast$}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a2f2f07578bdc28b9d217f79b8d37e2b6}
+Method to analyze 2\-D transformation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Pointer to transformation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated angle 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a0b89c7cf90db8719b2324cce13b43e5b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!do\-Registration@{do\-Registration}}
+\index{do\-Registration@{do\-Registration}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{do\-Registration}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Matrix ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::do\-Registration (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Sensor\-Polar2\-D $\ast$}]{sensor, }
+\item[{obvious\-::\-Matrix $\ast$}]{M, }
+\item[{obvious\-::\-Matrix $\ast$}]{Mvalid, }
+\item[{obvious\-::\-Matrix $\ast$}]{N, }
+\item[{obvious\-::\-Matrix $\ast$}]{Nvalid, }
+\item[{obvious\-::\-Matrix $\ast$}]{S, }
+\item[{obvious\-::\-Matrix $\ast$}]{Svalid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a0b89c7cf90db8719b2324cce13b43e5b}
+Main registration method. Aligns two laser scans and calculates the referring 2\-D transformation matrix. 
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Laser data container \\
+\hline
+{\em M} & Pointer to model points \\
+\hline
+{\em Mvalid} & Pointer to model points \\
+\hline
+{\em N} & Pointer to normals of the model \\
+\hline
+{\em Nvalid} & Pointer to normals of the model \\
+\hline
+{\em S} & Pointer to scene points \\
+\hline
+{\em Svalid} & Pointer to scene points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2\-D transformation matrix of type obvious\-::\-Matrix 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!event\-Loop@{event\-Loop}}
+\index{event\-Loop@{event\-Loop}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::event\-Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}
+Abstract function derived from base class \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM}{Thread\-S\-L\-A\-M}. Consists of a loop the thread never leaves until a termination call occurs. 
+
+Implements \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}.
+
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_aec7ad646c46fd6809d7606d02388d26f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!init@{init}}
+\index{init@{init}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::init (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Laser\-Scan \&}]{scan}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_aec7ad646c46fd6809d7606d02388d26f}
+Init function automatically called by first received laser data. 
+\begin{DoxyParams}{Parameters}
+{\em scan} & Initial scan used to initialize all parameters of the thread \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a42b20cc96002fb42347aa292a8321589}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!is\-Pose\-Change\-Significant@{is\-Pose\-Change\-Significant}}
+\index{is\-Pose\-Change\-Significant@{is\-Pose\-Change\-Significant}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{is\-Pose\-Change\-Significant}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::is\-Pose\-Change\-Significant (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix $\ast$}]{last\-Pose, }
+\item[{obvious\-::\-Matrix $\ast$}]{cur\-Pose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a42b20cc96002fb42347aa292a8321589}
+Method to determine whether the localized sensor has been moved significantly (value higher than thresh). A map update is only initiated in case this method returns true. 
+\begin{DoxyParams}{Parameters}
+{\em last\-Pose} & Pointer to last known pose \\
+\hline
+{\em cur\-Pose} & Pointer to current pose \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of significant pose change 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b03610d7b3f56c24c733e2cc1f922bc}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!is\-Registration\-Error@{is\-Registration\-Error}}
+\index{is\-Registration\-Error@{is\-Registration\-Error}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{is\-Registration\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::is\-Registration\-Error (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix $\ast$}]{T, }
+\item[{const double}]{trns\-Max, }
+\item[{const double}]{rot\-Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b03610d7b3f56c24c733e2cc1f922bc}
+Method to prevent registration errors by comparing the computed transformation to thresholds. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Current 2\-D transformation \\
+\hline
+{\em trns\-Max} & Translation thresh \\
+\hline
+{\em rot\-Max} & Rotation thresh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of an error 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab93dfc8a688c178b641ef5deec94bf91}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!laser\-Call\-Back@{laser\-Call\-Back}}
+\index{laser\-Call\-Back@{laser\-Call\-Back}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{laser\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::laser\-Call\-Back (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Laser\-Scan \&}]{scan}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab93dfc8a688c178b641ef5deec94bf91}
+Callback method for laserscans 
+\begin{DoxyParams}{Parameters}
+{\em scan} & Laserscan data \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a8b5b655705c1c06398b725d37815084b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!mask\-Matrix@{mask\-Matrix}}
+\index{mask\-Matrix@{mask\-Matrix}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{mask\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Matrix ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::mask\-Matrix (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix $\ast$}]{Mat, }
+\item[{bool $\ast$}]{mask, }
+\item[{unsigned int}]{mask\-Size, }
+\item[{unsigned int}]{valid\-Points}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a8b5b655705c1c06398b725d37815084b}
+Method to remove certain values in a matrix using a given mask. 
+\begin{DoxyParams}{Parameters}
+{\em Mat} & Input matrix data \\
+\hline
+{\em mask} & Value mask \\
+\hline
+{\em mask\-Size} & Amount of values in the mask \\
+\hline
+{\em valid\-Points} & Value determining the number of values in the output matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered matrix of type obvious\-::\-Matrix 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_acc11e43687732ffe8c81dfbeb293a6bc}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!obviously\-Matrix3x3\-To\-Tf@{obviously\-Matrix3x3\-To\-Tf}}
+\index{obviously\-Matrix3x3\-To\-Tf@{obviously\-Matrix3x3\-To\-Tf}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{obviously\-Matrix3x3\-To\-Tf}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Transform ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::obviously\-Matrix3x3\-To\-Tf (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix \&}]{ob}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_acc11e43687732ffe8c81dfbeb293a6bc}
+Method to convert an 3x3 obvious\-::\-Matrix to a tf matrix 
+\begin{DoxyParams}{Parameters}
+{\em ob} & obvious\-::\-Matrix input to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tf matrix tf\-::\-Transform 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a9ebe616b6e1af232d3663ea7ba8af19e}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!reduce\-Resolution@{reduce\-Resolution}}
+\index{reduce\-Resolution@{reduce\-Resolution}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{reduce\-Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::reduce\-Resolution (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$const}]{mask\-In, }
+\item[{obvious\-::\-Matrix $\ast$}]{mat\-In, }
+\item[{bool $\ast$const}]{mask\-Out, }
+\item[{obvious\-::\-Matrix $\ast$}]{mat\-Out, }
+\item[{unsigned int}]{points\-In, }
+\item[{unsigned int}]{points\-Out, }
+\item[{unsigned int}]{reduction\-Factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a9ebe616b6e1af232d3663ea7ba8af19e}
+Method to reduce the values in a matrix with a given reduction factor. 
+\begin{DoxyParams}{Parameters}
+{\em mask\-In} & Input mask \\
+\hline
+{\em mat\-In} & Input matrix data \\
+\hline
+{\em mask\-Out} & Output mask \\
+\hline
+{\em mat\-Out} & Filtered matrix data \\
+\hline
+{\em points\-In} & Amount of points in unfiltered data \\
+\hline
+{\em points\-Out} & Amount of points in filtered data \\
+\hline
+{\em reduction\-Factor} & Reduction factor \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a3b98400814080c99c6cf5d6513b85b8d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!send\-Nan\-Transform@{send\-Nan\-Transform}}
+\index{send\-Nan\-Transform@{send\-Nan\-Transform}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{send\-Nan\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::send\-Nan\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a3b98400814080c99c6cf5d6513b85b8d}
+Method sending an irregular pose and tf (consisting only of N\-A\-N values), broadcasting a detected registration error. \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a7e09fab6884bb9752525a5b9a3223f48}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!send\-Transform@{send\-Transform}}
+\index{send\-Transform@{send\-Transform}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{send\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::send\-Transform (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix $\ast$}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a7e09fab6884bb9752525a5b9a3223f48}
+Method to broadcast the calculated transformation via ros\-::geometry\-\_\-msgs\-::\-Pose\-Stamped and ros\-::tf. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Calculated Transformation that is being broadcasted \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_aad3131cd2ef3eb0de3e79ed0d58a4190}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!tf\-To\-Obviously\-Matrix3x3@{tf\-To\-Obviously\-Matrix3x3}}
+\index{tf\-To\-Obviously\-Matrix3x3@{tf\-To\-Obviously\-Matrix3x3}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{tf\-To\-Obviously\-Matrix3x3}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Matrix ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::tf\-To\-Obviously\-Matrix3x3 (
+\begin{DoxyParamCaption}
+\item[{const tf\-::\-Transform \&}]{tf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_aad3131cd2ef3eb0de3e79ed0d58a4190}
+Converts a tf matrix to a 3x3 obvious\-::\-Matrix 
+\begin{DoxyParams}{Parameters}
+{\em tf} & matrix to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted obvious\-::\-Matrix 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a45c7b109a3a9f22e0c60111c58eb0dd3}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-assigner@{\-\_\-assigner}}
+\index{\-\_\-assigner@{\-\_\-assigner}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-assigner}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Pair\-Assignment$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-assigner\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a45c7b109a3a9f22e0c60111c58eb0dd3}
+I\-C\-P pair assigner \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000021}{Todo}]wo wird der schmarrn denn verwendet bidde sachamol \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-data\-Mutex@{\-\_\-data\-Mutex}}
+\index{\-\_\-data\-Mutex@{\-\_\-data\-Mutex}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-data\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-data\-Mutex\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}
+Mutex to synchronize main thread (subscriber) and thread event loop \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000019}{Todo}]either this or flags obsolete \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a34dc7fcb1cc798542270309014f09b93}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-estimator@{\-\_\-estimator}}
+\index{\-\_\-estimator@{\-\_\-estimator}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-estimator}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-I\-Rigid\-Estimator$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-estimator\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a34dc7fcb1cc798542270309014f09b93}
+I\-C\-P transformation estimator \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_aac86a10eecf70da80d5198e9296e2aea}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-filter\-Bounds@{\-\_\-filter\-Bounds}}
+\index{\-\_\-filter\-Bounds@{\-\_\-filter\-Bounds}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-filter\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Out\-Of\-Bounds\-Filter2\-D$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-filter\-Bounds\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_aac86a10eecf70da80d5198e9296e2aea}
+I\-C\-P out of bounds filter \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a34e17bd9ddbcf1431feb2cca272d8d69}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-filter\-Dist@{\-\_\-filter\-Dist}}
+\index{\-\_\-filter\-Dist@{\-\_\-filter\-Dist}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-filter\-Dist}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Distance\-Filter$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-filter\-Dist\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a34e17bd9ddbcf1431feb2cca272d8d69}
+I\-C\-P distance filter \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4444f42e17414907a35919adc4904268}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-filter\-Reciprocal@{\-\_\-filter\-Reciprocal}}
+\index{\-\_\-filter\-Reciprocal@{\-\_\-filter\-Reciprocal}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-filter\-Reciprocal}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Reciprocal\-Filter$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-filter\-Reciprocal\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4444f42e17414907a35919adc4904268}
+I\-C\-P reciprocal filter \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000022}{Todo}]what is this? \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_af9493e2cbbce37f693bbe632374d0d2a}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-grid\-Height@{\-\_\-grid\-Height}}
+\index{\-\_\-grid\-Height@{\-\_\-grid\-Height}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-grid\-Height}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-grid\-Height\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_af9493e2cbbce37f693bbe632374d0d2a}
+Height of tsd grid in m \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a74254a193f989fd948778e780a340b9c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-grid\-Off\-Set\-X@{\-\_\-grid\-Off\-Set\-X}}
+\index{\-\_\-grid\-Off\-Set\-X@{\-\_\-grid\-Off\-Set\-X}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-grid\-Off\-Set\-X}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-grid\-Off\-Set\-X\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a74254a193f989fd948778e780a340b9c}
+Grid origin x offset \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab12390e3a1727f9d1c47fc96747bd96c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-grid\-Off\-Set\-Y@{\-\_\-grid\-Off\-Set\-Y}}
+\index{\-\_\-grid\-Off\-Set\-Y@{\-\_\-grid\-Off\-Set\-Y}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-grid\-Off\-Set\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-grid\-Off\-Set\-Y\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab12390e3a1727f9d1c47fc96747bd96c}
+Grid origin y offset \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a09c5ac4604a298725984646e683aa600}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-grid\-Width@{\-\_\-grid\-Width}}
+\index{\-\_\-grid\-Width@{\-\_\-grid\-Width}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-grid\-Width}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-grid\-Width\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a09c5ac4604a298725984646e683aa600}
+Width of tsd grid in m \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a03e76d4fd6e599eb2e508dde1553c278}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-icp@{\-\_\-icp}}
+\index{\-\_\-icp@{\-\_\-icp}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-icp}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Icp$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-icp\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a03e76d4fd6e599eb2e508dde1553c278}
+I\-C\-P main instance \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a936d63f4a95f0102070be527a2636f8f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-initialized\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a936d63f4a95f0102070be527a2636f8f}
+Flag for successful initialization of this thread \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab4560c87e6163708f39d4cdfc2f8a074}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-laser\-Data@{\-\_\-laser\-Data}}
+\index{\-\_\-laser\-Data@{\-\_\-laser\-Data}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-laser\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::deque$<$sensor\-\_\-msgs\-::\-Laser\-Scan$\ast$$>$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-laser\-Data\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab4560c87e6163708f39d4cdfc2f8a074}
+Container for laser sensor data (filled by callback) \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a6170ca0dd6108536689c4dab3f7425f6}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-las\-Min\-Range@{\-\_\-las\-Min\-Range}}
+\index{\-\_\-las\-Min\-Range@{\-\_\-las\-Min\-Range}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-las\-Min\-Range}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-las\-Min\-Range\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a6170ca0dd6108536689c4dab3f7425f6}
+Minimum laser range \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b1c9b9fbbf202c5532755553cb42964}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-last\-Pose@{\-\_\-last\-Pose}}
+\index{\-\_\-last\-Pose@{\-\_\-last\-Pose}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-last\-Pose}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Matrix$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-last\-Pose\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a9b1c9b9fbbf202c5532755553cb42964}
+Last pose stored in Matrix \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a73a2ed65f92fbf13e82e7b00e8354c13}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-mapper@{\-\_\-mapper}}
+\index{\-\_\-mapper@{\-\_\-mapper}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-mapper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread\-Mapping}\& ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-mapper\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a73a2ed65f92fbf13e82e7b00e8354c13}
+Pointer to mapping thread \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a00672731c254282c9e469636245b49ba}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-mask\-M@{\-\_\-mask\-M}}
+\index{\-\_\-mask\-M@{\-\_\-mask\-M}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-mask\-M}]{\setlength{\rightskip}{0pt plus 5cm}bool$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-mask\-M\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a00672731c254282c9e469636245b49ba}
+Mask of model \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a0f697cbf384346d1c13504830a83d768}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-mask\-S@{\-\_\-mask\-S}}
+\index{\-\_\-mask\-S@{\-\_\-mask\-S}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-mask\-S}]{\setlength{\rightskip}{0pt plus 5cm}bool$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-mask\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a0f697cbf384346d1c13504830a83d768}
+Mask of scene \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a3339b24a6b047266ceda1c160c79b1de}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-model\-Coords@{\-\_\-model\-Coords}}
+\index{\-\_\-model\-Coords@{\-\_\-model\-Coords}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-model\-Coords}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-model\-Coords\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a3339b24a6b047266ceda1c160c79b1de}
+Buffer for model coordinates \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab787c1c72a9d4ac14e08c05519530e63}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-model\-Normals@{\-\_\-model\-Normals}}
+\index{\-\_\-model\-Normals@{\-\_\-model\-Normals}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-model\-Normals}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-model\-Normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab787c1c72a9d4ac14e08c05519530e63}
+Buffer for model normals \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ae67e48692aef6eadb8a12c2c89362c94}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-name\-Space@{\-\_\-name\-Space}}
+\index{\-\_\-name\-Space@{\-\_\-name\-Space}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-name\-Space}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-name\-Space\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ae67e48692aef6eadb8a12c2c89362c94}
+namespace for all topics and services \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a339ec43d3843e2049120afd424a636f7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-nh@{\-\_\-nh}}
+\index{\-\_\-nh@{\-\_\-nh}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-nh}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-nh\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a339ec43d3843e2049120afd424a636f7}
+Pointer to main Node\-Handle \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-odom\-Analyzer@{\-\_\-odom\-Analyzer}}
+\index{\-\_\-odom\-Analyzer@{\-\_\-odom\-Analyzer}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-odom\-Analyzer}]{\setlength{\rightskip}{0pt plus 5cm}Odometry\-Analyzer$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-odom\-Analyzer\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}
+Pointer to odometry analyzer class \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a60894678d5815e42124c78eef219cf8b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-odom\-Tf\-Is\-Valid@{\-\_\-odom\-Tf\-Is\-Valid}}
+\index{\-\_\-odom\-Tf\-Is\-Valid@{\-\_\-odom\-Tf\-Is\-Valid}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-odom\-Tf\-Is\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-odom\-Tf\-Is\-Valid\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a60894678d5815e42124c78eef219cf8b}
+state of the actual odom tf transform \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad9d5e74c4f7b20dcb89e108ad8cfbe08}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-\-P\-D\-F\-Matcher@{\-\_\-\-P\-D\-F\-Matcher}}
+\index{\-\_\-\-P\-D\-F\-Matcher@{\-\_\-\-P\-D\-F\-Matcher}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-\-P\-D\-F\-Matcher}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-P\-D\-F\-Matching$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-\-P\-D\-F\-Matcher\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad9d5e74c4f7b20dcb89e108ad8cfbe08}
+Matcher instance \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4072511df787f573ce74945a3021cd70}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-pose\-Pub@{\-\_\-pose\-Pub}}
+\index{\-\_\-pose\-Pub@{\-\_\-pose\-Pub}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-pose\-Pub}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-pose\-Pub\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4072511df787f573ce74945a3021cd70}
+R\-O\-S pose publisher \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a53b8418b5cb138095c170ee523c5e433}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-pose\-Stamped@{\-\_\-pose\-Stamped}}
+\index{\-\_\-pose\-Stamped@{\-\_\-pose\-Stamped}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-pose\-Stamped}]{\setlength{\rightskip}{0pt plus 5cm}geometry\-\_\-msgs\-::\-Pose\-Stamped ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-pose\-Stamped\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a53b8418b5cb138095c170ee523c5e433}
+R\-O\-S current pose \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a527f8668ebe51a6bc7cadba7075c8c3f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-\-Random\-Normal\-Matcher@{\-\_\-\-Random\-Normal\-Matcher}}
+\index{\-\_\-\-Random\-Normal\-Matcher@{\-\_\-\-Random\-Normal\-Matcher}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-\-Random\-Normal\-Matcher}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Random\-Normal\-Matching$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-\-Random\-Normal\-Matcher\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a527f8668ebe51a6bc7cadba7075c8c3f}
+Matcher instance \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4af9a78a5c16b1a4966b1e28a27b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ran\-Eps\-Thresh@{\-\_\-ran\-Eps\-Thresh}}
+\index{\-\_\-ran\-Eps\-Thresh@{\-\_\-ran\-Eps\-Thresh}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-ran\-Eps\-Thresh}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Eps\-Thresh\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4af9a78a5c16b1a4966b1e28a27b}
+Threshold for experimental registration algorithm \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000020}{Todo}]was ist das? \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a5ab8f03d41a726e561c95be6d6f090a7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ran\-Phi\-Max@{\-\_\-ran\-Phi\-Max}}
+\index{\-\_\-ran\-Phi\-Max@{\-\_\-ran\-Phi\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-ran\-Phi\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Phi\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a5ab8f03d41a726e561c95be6d6f090a7}
+Angle threshold for registration algorithm \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a33d533907a160e94d357ecd3d8226f9b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ran\-Size\-Ctrl\-Set@{\-\_\-ran\-Size\-Ctrl\-Set}}
+\index{\-\_\-ran\-Size\-Ctrl\-Set@{\-\_\-ran\-Size\-Ctrl\-Set}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-ran\-Size\-Ctrl\-Set}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Size\-Ctrl\-Set\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a33d533907a160e94d357ecd3d8226f9b}
+Control size set for registration algorithm \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a756d269b7f0782d3e789f29bfc7d838d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ran\-Trials@{\-\_\-ran\-Trials}}
+\index{\-\_\-ran\-Trials@{\-\_\-ran\-Trials}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-ran\-Trials}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Trials\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a756d269b7f0782d3e789f29bfc7d838d}
+Iterations for registration algorithm \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_acf45081cf4d42221dbc924b9fd6a1384}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ray\-Caster@{\-\_\-ray\-Caster}}
+\index{\-\_\-ray\-Caster@{\-\_\-ray\-Caster}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-ray\-Caster}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Ray\-Cast\-Polar2\-D$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ray\-Caster\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_acf45081cf4d42221dbc924b9fd6a1384}
+2\-D reconstruction done by Raycaster \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ace3a4195d80299e3eb37be6c3a06a218}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-reg\-Mode@{\-\_\-reg\-Mode}}
+\index{\-\_\-reg\-Mode@{\-\_\-reg\-Mode}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-reg\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Enum\-Reg\-Modes} ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-reg\-Mode\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ace3a4195d80299e3eb37be6c3a06a218}
+Registration mode \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a176899f67fbf706a756853a8af968fd5}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-reverse\-Scan@{\-\_\-reverse\-Scan}}
+\index{\-\_\-reverse\-Scan@{\-\_\-reverse\-Scan}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-reverse\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-reverse\-Scan\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a176899f67fbf706a756853a8af968fd5}
+Scan passed in clockwise rotation (mathematically negative increment) \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4eec8ac0c4da6cc90fe5dcc22cee2447}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-rot\-Max@{\-\_\-rot\-Max}}
+\index{\-\_\-rot\-Max@{\-\_\-rot\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-rot\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-rot\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4eec8ac0c4da6cc90fe5dcc22cee2447}
+I\-C\-P rotation threshold \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab72a7278c4ce34dab852571b7c83705c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-rot\-Velocity\-Max@{\-\_\-rot\-Velocity\-Max}}
+\index{\-\_\-rot\-Velocity\-Max@{\-\_\-rot\-Velocity\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-rot\-Velocity\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-rot\-Velocity\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab72a7278c4ce34dab852571b7c83705c}
+I\-C\-P rotation threshold \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a44d298a710aa05043423e8894e8454a0}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-scene@{\-\_\-scene}}
+\index{\-\_\-scene@{\-\_\-scene}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-scene}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-scene\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a44d298a710aa05043423e8894e8454a0}
+Buffer for scene coordinates \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad08189f4b2c11aa3f2d75384d89088f8}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-sensor@{\-\_\-sensor}}
+\index{\-\_\-sensor@{\-\_\-sensor}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Sensor\-Polar2\-D$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-sensor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad08189f4b2c11aa3f2d75384d89088f8}
+Sensor container for handling the current laser input and pose \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_acf1975963191b84dd1fda914a4cc15ae}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-stamp\-Laser@{\-\_\-stamp\-Laser}}
+\index{\-\_\-stamp\-Laser@{\-\_\-stamp\-Laser}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-stamp\-Laser}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Time ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-stamp\-Laser\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_acf1975963191b84dd1fda914a4cc15ae}
+Laser time stamp now \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a3993fb6424dd9af667ddf0b14cdf2fe4}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-stamp\-Laser\-Old@{\-\_\-stamp\-Laser\-Old}}
+\index{\-\_\-stamp\-Laser\-Old@{\-\_\-stamp\-Laser\-Old}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-stamp\-Laser\-Old}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Time ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-stamp\-Laser\-Old\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a3993fb6424dd9af667ddf0b14cdf2fe4}
+Laser time stamp old \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a58c3e63ca51b4f667361138ca9612a43}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf@{\-\_\-tf}}
+\index{\-\_\-tf@{\-\_\-tf}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Stamped\-Transform ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a58c3e63ca51b4f667361138ca9612a43}
+R\-O\-S current transform \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ab83a495abfe38788855cd283334052ee}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Base\-Frame\-Id@{\-\_\-tf\-Base\-Frame\-Id}}
+\index{\-\_\-tf\-Base\-Frame\-Id@{\-\_\-tf\-Base\-Frame\-Id}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Base\-Frame\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Base\-Frame\-Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ab83a495abfe38788855cd283334052ee}
+R\-O\-S tf frame ids \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a422982c64baaa0ea6b2e259c78bb14f8}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Broadcaster@{\-\_\-tf\-Broadcaster}}
+\index{\-\_\-tf\-Broadcaster@{\-\_\-tf\-Broadcaster}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Broadcaster}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Transform\-Broadcaster ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Broadcaster\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a422982c64baaa0ea6b2e259c78bb14f8}
+R\-O\-S tf interface -\/ broadcaster \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a15312866770a11e59f0e2e260a5d8c05}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Child\-Frame\-Id@{\-\_\-tf\-Child\-Frame\-Id}}
+\index{\-\_\-tf\-Child\-Frame\-Id@{\-\_\-tf\-Child\-Frame\-Id}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Child\-Frame\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Child\-Frame\-Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a15312866770a11e59f0e2e260a5d8c05}
+R\-O\-S tf frame ids \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a49f36ec368f39a906125435adb7fa231}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Footprint\-Frame\-Id@{\-\_\-tf\-Footprint\-Frame\-Id}}
+\index{\-\_\-tf\-Footprint\-Frame\-Id@{\-\_\-tf\-Footprint\-Frame\-Id}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Footprint\-Frame\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Footprint\-Frame\-Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a49f36ec368f39a906125435adb7fa231}
+R\-O\-S tf frame ids \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a865325fdc2badfde0512622d52d60f46}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Laser@{\-\_\-tf\-Laser}}
+\index{\-\_\-tf\-Laser@{\-\_\-tf\-Laser}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Laser}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Transform ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Laser\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a865325fdc2badfde0512622d52d60f46}
+R\-O\-S tf Transform from base\-\_\-footprint to laser \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a224fab0e74f4e79a3bd7477c7ba67927}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Listener@{\-\_\-tf\-Listener}}
+\index{\-\_\-tf\-Listener@{\-\_\-tf\-Listener}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Transform\-Listener ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Listener\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a224fab0e74f4e79a3bd7477c7ba67927}
+R\-O\-S tf interface -\/ listener \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4f3c79f1893a406885983bd8984954e2}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Odom\-Frame\-Id@{\-\_\-tf\-Odom\-Frame\-Id}}
+\index{\-\_\-tf\-Odom\-Frame\-Id@{\-\_\-tf\-Odom\-Frame\-Id}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Odom\-Frame\-Id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Odom\-Frame\-Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4f3c79f1893a406885983bd8984954e2}
+R\-O\-S tf frame ids \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6eb4ec2cbb72976a751195aaa87b230}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-tf\-Reader@{\-\_\-tf\-Reader}}
+\index{\-\_\-tf\-Reader@{\-\_\-tf\-Reader}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-tf\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}tf\-::\-Stamped\-Transform ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-tf\-Reader\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6eb4ec2cbb72976a751195aaa87b230}
+Containre for reading tfs \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a943d9246b84ff11c2c01f7af1a3730f9}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-trns\-Max@{\-\_\-trns\-Max}}
+\index{\-\_\-trns\-Max@{\-\_\-trns\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-trns\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-trns\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a943d9246b84ff11c2c01f7af1a3730f9}
+I\-C\-P translation threshold \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a59316ea269ecac73e614061fa3f618df}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-trns\-Velocity\-Max@{\-\_\-trns\-Velocity\-Max}}
+\index{\-\_\-trns\-Velocity\-Max@{\-\_\-trns\-Velocity\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-trns\-Velocity\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-trns\-Velocity\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a59316ea269ecac73e614061fa3f618df}
+I\-C\-P translation threshold \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a8c7ca5e711fc2a346d130c9074b4f14d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher@{\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher}}
+\index{\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher@{\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-T\-S\-D\-\_\-\-P\-D\-F\-Matching$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-\-T\-S\-D\-\_\-\-P\-D\-F\-Matcher\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a8c7ca5e711fc2a346d130c9074b4f14d}
+Matcher instance \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a50a25580c50a3b14d04a548416142d6c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-use\-Odom\-Rescue@{\-\_\-use\-Odom\-Rescue}}
+\index{\-\_\-use\-Odom\-Rescue@{\-\_\-use\-Odom\-Rescue}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-use\-Odom\-Rescue}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-use\-Odom\-Rescue\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a50a25580c50a3b14d04a548416142d6c}
+use odom rescue flag \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a5f43425ab2bb540e72205ef83e37d4ff}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-wait\-For\-Odom\-Tf@{\-\_\-wait\-For\-Odom\-Tf}}
+\index{\-\_\-wait\-For\-Odom\-Tf@{\-\_\-wait\-For\-Odom\-Tf}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-wait\-For\-Odom\-Tf}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Duration ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-wait\-For\-Odom\-Tf\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a5f43425ab2bb540e72205ef83e37d4ff}
+time to wait for synchronized odom tf \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a2bfa898645a8b505fbc317829da277cf}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-x\-Offset@{\-\_\-x\-Offset}}
+\index{\-\_\-x\-Offset@{\-\_\-x\-Offset}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-x\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-x\-Offset\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a2bfa898645a8b505fbc317829da277cf}
+Initial x\-Offset \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_afd9255f70ea924f91b0e628d20245803}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-y\-Offset@{\-\_\-y\-Offset}}
+\index{\-\_\-y\-Offset@{\-\_\-y\-Offset}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
+\subsubsection[{\-\_\-y\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-y\-Offset\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_afd9255f70ea924f91b0e628d20245803}
+Initial y\-Offset 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ThreadLocalize_8h}{Thread\-Localize.\-h}\end{DoxyCompactItemize}

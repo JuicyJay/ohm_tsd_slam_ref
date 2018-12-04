@@ -1,0 +1,199 @@
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid}{\section{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid Class Reference}
+\label{classohm__tsd__slam__ref_1_1ThreadGrid}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+}
+
+
+Class implementing a thread that generates an occupancy grid.  
+
+
+
+
+{\ttfamily \#include $<$Thread\-Grid.\-h$>$}
+
+
+
+Inheritance diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classohm__tsd__slam__ref_1_1ThreadGrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classohm__tsd__slam__ref_1_1ThreadGrid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a23ff222ecd6e64afde2e8c926e40889c}{Thread\-Grid} (obvious\-::\-Tsd\-Grid $\ast$grid, ros\-::\-Node\-Handle $\ast$const nh, const double x\-Offset, const double y\-Offset)
+\item 
+virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_af82bbcec8320f6bc6fb1797f062fa8d9}{$\sim$\-Thread\-Grid} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_ab5153ffea8c253924f5d5f1f05d9aa59}{event\-Loop} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a59566780b74cff54ab8a9ac398e29657}{get\-Map\-Serv\-Call\-Back} (nav\-\_\-msgs\-::\-Get\-Map\-::\-Request \&req, nav\-\_\-msgs\-::\-Get\-Map\-::\-Response \&res)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+nav\-\_\-msgs\-::\-Occupancy\-Grid $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_aabac708b71745a854f552156b8aef2ae}{\-\_\-occ\-Grid}
+\item 
+ros\-::\-Service\-Server \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_aa37d0527a25f70d3e6869229b6808810}{\-\_\-get\-Map\-Serv}
+\item 
+char $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a3e1350e3d4943ab408ae9b0935300972}{\-\_\-occ\-Grid\-Content}
+\item 
+double $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a01adc5e95f879fbed0686a008a44ea86}{\-\_\-grid\-Coords}
+\item 
+unsigned int \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a4e18fa3923e4a016ad2ca963ccd318d7}{\-\_\-width}
+\item 
+unsigned int \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a549634eab5110b6b3f0ce5bf5ee82fca}{\-\_\-height}
+\item 
+double \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a91bad701055d367eefe1e4b3639a71fd}{\-\_\-cell\-Size}
+\item 
+ros\-::\-Publisher \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a6a7f8db27c4cee799aaf328caacd2bdf}{\-\_\-grid\-Pub}
+\item 
+ros\-::\-Publisher \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a86ea0357d397f91ef76eb40389fb55e0}{\-\_\-pub\-Color\-Image}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a2b8fe225e961331b72894697f1a8b120}{\-\_\-pub\-Tsd\-Color\-Map}
+\item 
+unsigned int \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a0e9769acfadae7638005529607d7ff79}{\-\_\-obj\-Inflate\-Factor}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a2eef7cdb2d93710b69cd4858a7e7d337}{\-\_\-object\-Inflation}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class implementing a thread that generates an occupancy grid. 
+
+\begin{DoxyAuthor}{Author}
+Philipp Koch, Stefan May 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a23ff222ecd6e64afde2e8c926e40889c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!Thread\-Grid@{Thread\-Grid}}
+\index{Thread\-Grid@{Thread\-Grid}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{Thread\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-Thread\-Grid (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Tsd\-Grid $\ast$}]{grid, }
+\item[{ros\-::\-Node\-Handle $\ast$const}]{nh, }
+\item[{const double}]{x\-Offset, }
+\item[{const double}]{y\-Offset}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a23ff222ecd6e64afde2e8c926e40889c}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em grid} & Representation \\
+\hline
+{\em nh} & R\-O\-S nodehandle \\
+\hline
+{\em x\-Offset} & \\
+\hline
+{\em y\-Offset} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000015}{Todo}]warum prv\-Nh ohne string template $<$$>$ \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_af82bbcec8320f6bc6fb1797f062fa8d9}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!$\sim$\-Thread\-Grid@{$\sim$\-Thread\-Grid}}
+\index{$\sim$\-Thread\-Grid@{$\sim$\-Thread\-Grid}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{$\sim$\-Thread\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::$\sim$\-Thread\-Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_af82bbcec8320f6bc6fb1797f062fa8d9}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_ab5153ffea8c253924f5d5f1f05d9aa59}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!event\-Loop@{event\-Loop}}
+\index{event\-Loop@{event\-Loop}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::event\-Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_ab5153ffea8c253924f5d5f1f05d9aa59}
+Event Loop for thread \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000017}{Todo}]können wir bitttttte die occupied cells berechnung mal durchgehen \end{DoxyRefDesc}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000016}{Todo}]unsigned char$\ast$ color\-Buffer -\/ std\-::vector? \end{DoxyRefDesc}
+
+
+Implements \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}.
+
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a59566780b74cff54ab8a9ac398e29657}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!get\-Map\-Serv\-Call\-Back@{get\-Map\-Serv\-Call\-Back}}
+\index{get\-Map\-Serv\-Call\-Back@{get\-Map\-Serv\-Call\-Back}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{get\-Map\-Serv\-Call\-Back}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::get\-Map\-Serv\-Call\-Back (
+\begin{DoxyParamCaption}
+\item[{nav\-\_\-msgs\-::\-Get\-Map\-::\-Request \&}]{req, }
+\item[{nav\-\_\-msgs\-::\-Get\-Map\-::\-Response \&}]{res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a59566780b74cff54ab8a9ac398e29657}
+R\-O\-S service callback method for Get\-Map service Get the map as a nav\-\_\-msgs/\-Occupancy\-Grid 
+\begin{DoxyParams}{Parameters}
+{\em req} & Request \\
+\hline
+{\em res} & Response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a91bad701055d367eefe1e4b3639a71fd}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-cell\-Size@{\-\_\-cell\-Size}}
+\index{\-\_\-cell\-Size@{\-\_\-cell\-Size}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-cell\-Size}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-cell\-Size\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a91bad701055d367eefe1e4b3639a71fd}
+Grid resolution \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_aa37d0527a25f70d3e6869229b6808810}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-get\-Map\-Serv@{\-\_\-get\-Map\-Serv}}
+\index{\-\_\-get\-Map\-Serv@{\-\_\-get\-Map\-Serv}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-get\-Map\-Serv}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-get\-Map\-Serv\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_aa37d0527a25f70d3e6869229b6808810}
+R\-O\-S server for Get\-Map service \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a01adc5e95f879fbed0686a008a44ea86}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-grid\-Coords@{\-\_\-grid\-Coords}}
+\index{\-\_\-grid\-Coords@{\-\_\-grid\-Coords}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-grid\-Coords}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-grid\-Coords\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a01adc5e95f879fbed0686a008a44ea86}
+Buffer for grid coordinates \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a6a7f8db27c4cee799aaf328caacd2bdf}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-grid\-Pub@{\-\_\-grid\-Pub}}
+\index{\-\_\-grid\-Pub@{\-\_\-grid\-Pub}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-grid\-Pub}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-grid\-Pub\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a6a7f8db27c4cee799aaf328caacd2bdf}
+R\-O\-S occupancy grid publisher \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a549634eab5110b6b3f0ce5bf5ee82fca}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-height@{\-\_\-height}}
+\index{\-\_\-height@{\-\_\-height}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-height\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a549634eab5110b6b3f0ce5bf5ee82fca}
+Grid dimension \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a2eef7cdb2d93710b69cd4858a7e7d337}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-object\-Inflation@{\-\_\-object\-Inflation}}
+\index{\-\_\-object\-Inflation@{\-\_\-object\-Inflation}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-object\-Inflation}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-object\-Inflation\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a2eef7cdb2d93710b69cd4858a7e7d337}
+Object inflation control flag \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a0e9769acfadae7638005529607d7ff79}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-obj\-Inflate\-Factor@{\-\_\-obj\-Inflate\-Factor}}
+\index{\-\_\-obj\-Inflate\-Factor@{\-\_\-obj\-Inflate\-Factor}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-obj\-Inflate\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-obj\-Inflate\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a0e9769acfadae7638005529607d7ff79}
+Object inflation factor \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_aabac708b71745a854f552156b8aef2ae}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-occ\-Grid@{\-\_\-occ\-Grid}}
+\index{\-\_\-occ\-Grid@{\-\_\-occ\-Grid}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-occ\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}nav\-\_\-msgs\-::\-Occupancy\-Grid$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-occ\-Grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_aabac708b71745a854f552156b8aef2ae}
+Occupancy grid \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a3e1350e3d4943ab408ae9b0935300972}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-occ\-Grid\-Content@{\-\_\-occ\-Grid\-Content}}
+\index{\-\_\-occ\-Grid\-Content@{\-\_\-occ\-Grid\-Content}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-occ\-Grid\-Content}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-occ\-Grid\-Content\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a3e1350e3d4943ab408ae9b0935300972}
+Buffer for occupancy grid content \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000018}{Todo}]eventuell abändern, veraltet \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a86ea0357d397f91ef76eb40389fb55e0}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-pub\-Color\-Image@{\-\_\-pub\-Color\-Image}}
+\index{\-\_\-pub\-Color\-Image@{\-\_\-pub\-Color\-Image}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-pub\-Color\-Image}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Publisher ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-pub\-Color\-Image\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a86ea0357d397f91ef76eb40389fb55e0}
+R\-O\-S color image publisher \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a2b8fe225e961331b72894697f1a8b120}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-pub\-Tsd\-Color\-Map@{\-\_\-pub\-Tsd\-Color\-Map}}
+\index{\-\_\-pub\-Tsd\-Color\-Map@{\-\_\-pub\-Tsd\-Color\-Map}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-pub\-Tsd\-Color\-Map}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-pub\-Tsd\-Color\-Map\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a2b8fe225e961331b72894697f1a8b120}
+Publish color map control flag \hypertarget{classohm__tsd__slam__ref_1_1ThreadGrid_a4e18fa3923e4a016ad2ca963ccd318d7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}!\-\_\-width@{\-\_\-width}}
+\index{\-\_\-width@{\-\_\-width}!ohm_tsd_slam_ref::ThreadGrid@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}}
+\subsubsection[{\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid\-::\-\_\-width\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadGrid_a4e18fa3923e4a016ad2ca963ccd318d7}
+Grid dimension 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ThreadGrid_8h}{Thread\-Grid.\-h}\item 
+src/\hyperlink{ThreadGrid_8cpp}{Thread\-Grid.\-cpp}\end{DoxyCompactItemize}

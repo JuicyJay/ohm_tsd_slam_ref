@@ -1,0 +1,155 @@
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping}{\section{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Mapping Class Reference}
+\label{classohm__tsd__slam__ref_1_1ThreadMapping}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+}
+
+
+Implements a thread updating an obvious\-:Tsd\-Grid.  
+
+
+
+
+{\ttfamily \#include $<$Thread\-Mapping.\-h$>$}
+
+
+
+Inheritance diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Mapping\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classohm__tsd__slam__ref_1_1ThreadMapping__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Mapping\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classohm__tsd__slam__ref_1_1ThreadMapping__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_af5ba08d19538cdee50f17391084ba4c9}{Thread\-Mapping} (obvious\-::\-Tsd\-Grid $\ast$grid)
+\item 
+virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_afb1f328315a30d8066668af4f111ee40}{$\sim$\-Thread\-Mapping} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_aac36284866500920d4a23748be50aa2d}{queue\-Push} (obvious\-::\-Sensor\-Polar2\-D $\ast$sensor)
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a28411f62f9383d0a533cee4cd270d81c}{initialized} (void)
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_adb528149e6812dc8eba37ffe34801185}{init\-Push} (obvious\-::\-Sensor\-Polar2\-D $\ast$sensor)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a4adf91a34a9cc1c237b180d02eb0b013}{event\-Loop} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::deque\\*
+$<$ obvious\-::\-Sensor\-Polar2\-D $\ast$ $>$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a789f75baff077164a69bb62b479c593d}{\-\_\-sensors}
+\item 
+boost\-::mutex \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a7c2899e1dd044dd21a98db7cf8b38a9d}{\-\_\-push\-Mutex}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a450952216cdda4e4a7b57d899429291c}{\-\_\-initialized}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implements a thread updating an obvious\-:Tsd\-Grid. 
+
+\begin{DoxyAuthor}{Author}
+Philipp Koch, Stefan May 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_af5ba08d19538cdee50f17391084ba4c9}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!Thread\-Mapping@{Thread\-Mapping}}
+\index{Thread\-Mapping@{Thread\-Mapping}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{Thread\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::\-Thread\-Mapping (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Tsd\-Grid $\ast$}]{grid}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_af5ba08d19538cdee50f17391084ba4c9}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em grid} & Representation taken over from base class \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM}{Thread\-S\-L\-A\-M} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_afb1f328315a30d8066668af4f111ee40}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!$\sim$\-Thread\-Mapping@{$\sim$\-Thread\-Mapping}}
+\index{$\sim$\-Thread\-Mapping@{$\sim$\-Thread\-Mapping}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{$\sim$\-Thread\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::$\sim$\-Thread\-Mapping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_afb1f328315a30d8066668af4f111ee40}
+Desctructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_a4adf91a34a9cc1c237b180d02eb0b013}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!event\-Loop@{event\-Loop}}
+\index{event\-Loop@{event\-Loop}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::event\-Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_a4adf91a34a9cc1c237b180d02eb0b013}
+abstract function derived from base class \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM}{Thread\-S\-L\-A\-M}; consists of a loop the thread never leaves until a termination call occurs updates the representation with the first sensor element in the deque \-\_\-sensors and removes used sensor element; iterates until queue is empty -\/ enters blocked mode after that 
+
+Implements \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}.
+
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_a28411f62f9383d0a533cee4cd270d81c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!initialized@{initialized}}
+\index{initialized@{initialized}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::initialized (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_a28411f62f9383d0a533cee4cd270d81c}
+Bool determining whether T\-S\-D grid contains data or not, called by \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} \begin{DoxyReturn}{Returns}
+true in case of an initialized grid (contains data) 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_adb528149e6812dc8eba37ffe34801185}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!init\-Push@{init\-Push}}
+\index{init\-Push@{init\-Push}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{init\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::init\-Push (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Sensor\-Polar2\-D $\ast$}]{sensor}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_adb528149e6812dc8eba37ffe34801185}
+Method to initialize the grid from a certain pose, called by \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} 
+\begin{DoxyParams}{Parameters}
+{\em sensor} & initial sensor data (pose, laser, mask..) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_aac36284866500920d4a23748be50aa2d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!queue\-Push@{queue\-Push}}
+\index{queue\-Push@{queue\-Push}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{queue\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::queue\-Push (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Sensor\-Polar2\-D $\ast$}]{sensor}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_aac36284866500920d4a23748be50aa2d}
+Method to add an instance of Sensor\-Polar2\-D to the queue 
+\begin{DoxyParams}{Parameters}
+{\em sensor} & new sensor data (pose, laser, mask..) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_a450952216cdda4e4a7b57d899429291c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!\-\_\-initialized@{\-\_\-initialized}}
+\index{\-\_\-initialized@{\-\_\-initialized}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::\-\_\-initialized\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_a450952216cdda4e4a7b57d899429291c}
+Flag initialized \hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_a7c2899e1dd044dd21a98db7cf8b38a9d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!\-\_\-push\-Mutex@{\-\_\-push\-Mutex}}
+\index{\-\_\-push\-Mutex@{\-\_\-push\-Mutex}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{\-\_\-push\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::\-\_\-push\-Mutex\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_a7c2899e1dd044dd21a98db7cf8b38a9d}
+Push mutex for double-\/ended-\/queue; synchronization necessary since queue is accessed by two threads method locks the mutex before adding data and unlocks it before terminating \hypertarget{classohm__tsd__slam__ref_1_1ThreadMapping_a789f75baff077164a69bb62b479c593d}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}!\-\_\-sensors@{\-\_\-sensors}}
+\index{\-\_\-sensors@{\-\_\-sensors}!ohm_tsd_slam_ref::ThreadMapping@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}}
+\subsubsection[{\-\_\-sensors}]{\setlength{\rightskip}{0pt plus 5cm}std\-::deque$<$obvious\-::\-Sensor\-Polar2\-D$\ast$$>$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping\-::\-\_\-sensors\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadMapping_a789f75baff077164a69bb62b479c593d}
+Sensor double-\/ended-\/queue, allows fast insertion and deletion at its beginning and end 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ThreadMapping_8h}{Thread\-Mapping.\-h}\item 
+src/\hyperlink{ThreadMapping_8cpp}{Thread\-Mapping.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,174 @@
+\hypertarget{classohm__tsd__slam_1_1SlamNode}{\section{ohm\-\_\-tsd\-\_\-slam\-:\-:Slam\-Node Class Reference}
+\label{classohm__tsd__slam_1_1SlamNode}\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+}
+
+
+main management, contains sub classes and ros interface  
+
+
+
+
+{\ttfamily \#include $<$Slam\-Node.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam_1_1SlamNode_a53405334bd8bd96a906d12fbee18a0f3}{Slam\-Node} (void)
+\begin{DoxyCompactList}\small\item\em class can be called in 2 modes, run\-Slam or run\-Localize (run method invoked by start method) \end{DoxyCompactList}\item 
+virtual \hyperlink{classohm__tsd__slam_1_1SlamNode_afa406b71eeedebc517f8af86da11cfe1}{$\sim$\-Slam\-Node} ()
+\item 
+void \hyperlink{classohm__tsd__slam_1_1SlamNode_aab61ed9a47da67c158575fff0c1bedf0}{start} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classohm__tsd__slam_1_1SlamNode_a4bd9154e7b2003ab45422bfd8df1ad39}{run} (void)
+\item 
+void \hyperlink{classohm__tsd__slam_1_1SlamNode_a4b997ce8018bf1f309dbe696a63b4a3b}{timed\-Grid\-Pub} (void)
+\item 
+bool \hyperlink{classohm__tsd__slam_1_1SlamNode_a413d9367bda74b0eba88beae030fe484}{call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M} (ohm\-\_\-tsd\-\_\-slam\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Request \&req, ohm\-\_\-tsd\-\_\-slam\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Response \&res)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\-::\-Node\-Handle \hyperlink{classohm__tsd__slam_1_1SlamNode_ad80198ebc14aa678f72738ba64d612bc}{\-\_\-nh}
+\item 
+obvious\-::\-Tsd\-Grid $\ast$ \hyperlink{classohm__tsd__slam_1_1SlamNode_ae781a4fa4945e764019bf372cd6ac5ab}{\-\_\-grid}
+\item 
+Thread\-Mapping $\ast$ \hyperlink{classohm__tsd__slam_1_1SlamNode_a6a6b18010b78fd8fbdf67aff45613c10}{\-\_\-thread\-Mapping}
+\item 
+Thread\-Grid $\ast$ \hyperlink{classohm__tsd__slam_1_1SlamNode_ab0dfdeb16f4b4ef1962c749954c77e32}{\-\_\-thread\-Grid}
+\item 
+double \hyperlink{classohm__tsd__slam_1_1SlamNode_a794eb5cfc1ba5f68d10e034061c3aed0}{\-\_\-x\-Off\-Factor}
+\item 
+double \hyperlink{classohm__tsd__slam_1_1SlamNode_a275194525a13fc4400406d172a9742d4}{\-\_\-y\-Off\-Factor}
+\item 
+ros\-::\-Duration $\ast$ \hyperlink{classohm__tsd__slam_1_1SlamNode_aca637ee8387c2414902516f0a4e32b79}{\-\_\-grid\-Interval}
+\item 
+ros\-::\-Rate $\ast$ \hyperlink{classohm__tsd__slam_1_1SlamNode_ad0a9e371e33605f4a5666060949473a5}{\-\_\-loop\-Rate}
+\item 
+std\-::vector$<$ \hyperlink{structohm__tsd__slam_1_1TaggedSubscriber}{Tagged\-Subscriber} $>$ \hyperlink{classohm__tsd__slam_1_1SlamNode_a34d64d8aeb88f263a8f1ee5d0966f3ce}{\-\_\-sub\-Laser}
+\item 
+std\-::vector$<$ Thread\-Localize $\ast$ $>$ \hyperlink{classohm__tsd__slam_1_1SlamNode_a94818e8716a1ee8d83071e2bf8fb2604}{\-\_\-localizers}
+\item 
+ros\-::\-Service\-Server \hyperlink{classohm__tsd__slam_1_1SlamNode_aa693190f5f7afb47e0933cdc62abe488}{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main management, contains sub classes and ros interface 
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_a53405334bd8bd96a906d12fbee18a0f3}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!Slam\-Node@{Slam\-Node}}
+\index{Slam\-Node@{Slam\-Node}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{Slam\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-Slam\-Node (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam_1_1SlamNode_a53405334bd8bd96a906d12fbee18a0f3}
+
+
+class can be called in 2 modes, run\-Slam or run\-Localize (run method invoked by start method) 
+
+Constructor (def.) default mode\-: S\-L\-A\-M mode, generates new empty obvious\-::\-Tsd\-Grid, dimension and resolution can be set by defines in \hyperlink{SlamNode_8h}{Slam\-Node.\-h} L\-O\-C\-A\-L\-I\-Z\-E mode\-: loads content from file at a given path, operates on a fixed model; in the fixed model no push into the grid is needed, no thread object is instantiated \hypertarget{classohm__tsd__slam_1_1SlamNode_afa406b71eeedebc517f8af86da11cfe1}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!$\sim$\-Slam\-Node@{$\sim$\-Slam\-Node}}
+\index{$\sim$\-Slam\-Node@{$\sim$\-Slam\-Node}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{$\sim$\-Slam\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::$\sim$\-Slam\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam_1_1SlamNode_afa406b71eeedebc517f8af86da11cfe1}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_a413d9367bda74b0eba88beae030fe484}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M@{call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M}}
+\index{call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M@{call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M (
+\begin{DoxyParamCaption}
+\item[{ohm\-\_\-tsd\-\_\-slam\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Request \&}]{req, }
+\item[{ohm\-\_\-tsd\-\_\-slam\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Response \&}]{res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a413d9367bda74b0eba88beae030fe484}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \\
+\hline
+{\em res} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]nachfragen \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_a4bd9154e7b2003ab45422bfd8df1ad39}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!run@{run}}
+\index{run@{run}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a4bd9154e7b2003ab45422bfd8df1ad39}
+main slam method including ros\-::spin\-Once etc. calls \hyperlink{classohm__tsd__slam_1_1SlamNode_a4b997ce8018bf1f309dbe696a63b4a3b}{timed\-Grid\-Pub()} \hypertarget{classohm__tsd__slam_1_1SlamNode_aab61ed9a47da67c158575fff0c1bedf0}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!start@{start}}
+\index{start@{start}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classohm__tsd__slam_1_1SlamNode_aab61ed9a47da67c158575fff0c1bedf0}
+called in main function to start \hyperlink{classohm__tsd__slam_1_1SlamNode}{Slam\-Node} calls \hyperlink{classohm__tsd__slam_1_1SlamNode_a4bd9154e7b2003ab45422bfd8df1ad39}{run()} method which defines the mode, S\-L\-A\-M or L\-O\-C\-A\-L\-I\-Z\-E \hypertarget{classohm__tsd__slam_1_1SlamNode_a4b997ce8018bf1f309dbe696a63b4a3b}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!timed\-Grid\-Pub@{timed\-Grid\-Pub}}
+\index{timed\-Grid\-Pub@{timed\-Grid\-Pub}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{timed\-Grid\-Pub}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::timed\-Grid\-Pub (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a4b997ce8018bf1f309dbe696a63b4a3b}
+calculates time difference between last map and now calls unblock() method of class Thread\-S\-L\-A\-M to enable occupancy grid thread with certain frequency if time difference $>$ \-\_\-grid\-Interval (\char`\"{}thresh\char`\"{} -\/ rate used for occupancy grid generation) 
+
+\subsection{Member Data Documentation}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_ae781a4fa4945e764019bf372cd6ac5ab}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-grid@{\-\_\-grid}}
+\index{\-\_\-grid@{\-\_\-grid}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Tsd\-Grid$\ast$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_ae781a4fa4945e764019bf372cd6ac5ab}
+Representation -\/ instance of one Tsd\-Grid \hypertarget{classohm__tsd__slam_1_1SlamNode_aca637ee8387c2414902516f0a4e32b79}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-grid\-Interval@{\-\_\-grid\-Interval}}
+\index{\-\_\-grid\-Interval@{\-\_\-grid\-Interval}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-grid\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Duration$\ast$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-grid\-Interval\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_aca637ee8387c2414902516f0a4e32b79}
+Rate used for occupancy grid generation \hypertarget{classohm__tsd__slam_1_1SlamNode_a94818e8716a1ee8d83071e2bf8fb2604}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-localizers@{\-\_\-localizers}}
+\index{\-\_\-localizers@{\-\_\-localizers}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-localizers}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$Thread\-Localize$\ast$$>$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-localizers\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a94818e8716a1ee8d83071e2bf8fb2604}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]was macht das hier? \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_ad0a9e371e33605f4a5666060949473a5}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-loop\-Rate@{\-\_\-loop\-Rate}}
+\index{\-\_\-loop\-Rate@{\-\_\-loop\-Rate}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-loop\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Rate$\ast$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-loop\-Rate\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_ad0a9e371e33605f4a5666060949473a5}
+Desired loop rate \hypertarget{classohm__tsd__slam_1_1SlamNode_ad80198ebc14aa678f72738ba64d612bc}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-nh@{\-\_\-nh}}
+\index{\-\_\-nh@{\-\_\-nh}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-nh}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-nh\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_ad80198ebc14aa678f72738ba64d612bc}
+Main node handle \hypertarget{classohm__tsd__slam_1_1SlamNode_aa693190f5f7afb47e0933cdc62abe488}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-service\-Start\-Stop\-S\-L\-A\-M@{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}}
+\index{\-\_\-service\-Start\-Stop\-S\-L\-A\-M@{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-service\-Start\-Stop\-S\-L\-A\-M\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_aa693190f5f7afb47e0933cdc62abe488}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]wofür brauchen wir den service? \end{DoxyRefDesc}
+\hypertarget{classohm__tsd__slam_1_1SlamNode_a34d64d8aeb88f263a8f1ee5d0966f3ce}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-sub\-Laser@{\-\_\-sub\-Laser}}
+\index{\-\_\-sub\-Laser@{\-\_\-sub\-Laser}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-sub\-Laser}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Tagged\-Subscriber}$>$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-sub\-Laser\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a34d64d8aeb88f263a8f1ee5d0966f3ce}
+R\-O\-S laser subscriber, storing all laser beams in a vector \hypertarget{classohm__tsd__slam_1_1SlamNode_ab0dfdeb16f4b4ef1962c749954c77e32}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-thread\-Grid@{\-\_\-thread\-Grid}}
+\index{\-\_\-thread\-Grid@{\-\_\-thread\-Grid}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-thread\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}Thread\-Grid$\ast$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-thread\-Grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_ab0dfdeb16f4b4ef1962c749954c77e32}
+Grid thread instance \hypertarget{classohm__tsd__slam_1_1SlamNode_a6a6b18010b78fd8fbdf67aff45613c10}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-thread\-Mapping@{\-\_\-thread\-Mapping}}
+\index{\-\_\-thread\-Mapping@{\-\_\-thread\-Mapping}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-thread\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}Thread\-Mapping$\ast$ ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-thread\-Mapping\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a6a6b18010b78fd8fbdf67aff45613c10}
+Mapping thread instance \hypertarget{classohm__tsd__slam_1_1SlamNode_a794eb5cfc1ba5f68d10e034061c3aed0}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-x\-Off\-Factor@{\-\_\-x\-Off\-Factor}}
+\index{\-\_\-x\-Off\-Factor@{\-\_\-x\-Off\-Factor}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-x\-Off\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-x\-Off\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a794eb5cfc1ba5f68d10e034061c3aed0}
+X starting offset factor \hypertarget{classohm__tsd__slam_1_1SlamNode_a275194525a13fc4400406d172a9742d4}{\index{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}!\-\_\-y\-Off\-Factor@{\-\_\-y\-Off\-Factor}}
+\index{\-\_\-y\-Off\-Factor@{\-\_\-y\-Off\-Factor}!ohm_tsd_slam::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node}}
+\subsubsection[{\-\_\-y\-Off\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-::\-Slam\-Node\-::\-\_\-y\-Off\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam_1_1SlamNode_a275194525a13fc4400406d172a9742d4}
+Y starting offset factor 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{SlamNode_8h}{Slam\-Node.\-h}\item 
+src/\hyperlink{SlamNode_8cpp}{Slam\-Node.\-cpp}\end{DoxyCompactItemize}

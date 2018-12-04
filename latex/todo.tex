@@ -1,0 +1,61 @@
+
+\begin{DoxyRefList}
+\item[\label{todo__todo000007}%
+\hypertarget{todo__todo000007}{}%
+Namespace \hyperlink{namespaceohm__tsd__slam__ref}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref} ]ns später ändern  
+\item[\label{todo__todo000013}%
+\hypertarget{todo__todo000013}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_abe1e2022599a8ce220de76b142486ea8}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:\-\_\-localizers} ]was macht das hier? storing \-\_\-grid, \-\_\-thread\-Mapping, x\-Offset and y\-Offset of Thread\-Localize  
+\item[\label{todo__todo000014}%
+\hypertarget{todo__todo000014}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_a2941b11fc25f02fad3467297f0260fec}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:\-\_\-service\-Start\-Stop\-S\-L\-A\-M} ]wofür brauchen wir den service?  
+\item[\label{todo__todo000011}%
+\hypertarget{todo__todo000011}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_ad57ec9810293549dc803209a950a776f}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:\-\_\-x\-Off\-Factor} ]same as \-\_\-x\-Off\-Factor -\/ prüfen, glaub das wird nicht verwendet -- launch file params auch löschen  
+\item[\label{todo__todo000012}%
+\hypertarget{todo__todo000012}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_a591fdd2fc92e9fd53112b36f0125cf51}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:\-\_\-y\-Off\-Factor} ]wofür gibt es die offset factors? im slamnode.\-cpp definier ich ja nochmal launch file params für x\-Offset u y\-Offset -\/ sehe keine Verwendung von \-\_\-y\-Off\-Factor 
+
+prüfen, glaub das wird nicht verwendet -- launch file params auch löschen  
+\item[\label{todo__todo000010}%
+\hypertarget{todo__todo000010}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_a5b4ee64a1d3b1ead996762adfc95ad94}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:call\-Back\-Service\-Start\-Stop\-S\-L\-A\-M} (ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Request \&req, ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Start\-Stop\-S\-L\-A\-M\-::\-Response \&res)]nachfragen  
+\item[\label{todo__todo000001}%
+\hypertarget{todo__todo000001}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_af35bd7adca13df47579a682ab3bb827d}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:Slam\-Node} (void)]verwirrend  
+\item[\label{todo__todo000002}%
+\hypertarget{todo__todo000002}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1SlamNode_a0dbbdf08b6ac75aba94c882715d7f49e}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Slam\-Node\-:\-:$\sim$\-Slam\-Node} ()]geht das so mit neuer foreach schleifn? prüfen, wenn Thread\-Localize erstellt ist  
+\item[\label{todo__todo000008}%
+\hypertarget{todo__todo000008}{}%
+Class \hyperlink{structohm__tsd__slam__ref_1_1TaggedSubscriber}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Tagged\-Subscriber} ]nachfragen  
+\item[\label{todo__todo000009}%
+\hypertarget{todo__todo000009}{}%
+Member \hyperlink{structohm__tsd__slam__ref_1_1TaggedSubscriber_a6d4ad13158333a16725cdc1cdd6ab3c2}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Tagged\-Subscriber\-:\-:topic} (const std\-::string topic)]was macht bool topic fct?  
+\item[\label{todo__todo000018}%
+\hypertarget{todo__todo000018}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a3e1350e3d4943ab408ae9b0935300972}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid\-:\-:\-\_\-occ\-Grid\-Content} ]eventuell abändern, veraltet  
+\item[\label{todo__todo000017}%
+\hypertarget{todo__todo000017}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_ab5153ffea8c253924f5d5f1f05d9aa59}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid\-:\-:event\-Loop} (void)]können wir bitttttte die occupied cells berechnung mal durchgehen 
+
+unsigned char$\ast$ color\-Buffer -\/ std\-::vector?  
+\item[\label{todo__todo000015}%
+\hypertarget{todo__todo000015}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_a23ff222ecd6e64afde2e8c926e40889c}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Grid\-:\-:Thread\-Grid} (obvious\-::\-Tsd\-Grid $\ast$grid, ros\-::\-Node\-Handle $\ast$const nh, const double x\-Offset, const double y\-Offset)]warum prv\-Nh ohne string template $<$$>$  
+\item[\label{todo__todo000021}%
+\hypertarget{todo__todo000021}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a45c7b109a3a9f22e0c60111c58eb0dd3}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\-:\-\_\-assigner} ]wo wird der schmarrn denn verwendet bidde sachamol  
+\item[\label{todo__todo000019}%
+\hypertarget{todo__todo000019}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\-:\-\_\-data\-Mutex} ]either this or flags obsolete  
+\item[\label{todo__todo000022}%
+\hypertarget{todo__todo000022}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4444f42e17414907a35919adc4904268}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\-:\-\_\-filter\-Reciprocal} ]what is this?  
+\item[\label{todo__todo000020}%
+\hypertarget{todo__todo000020}{}%
+Member \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4af9a78a5c16b1a4966b1e28a27b}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\-:\-:\-\_\-ran\-Eps\-Thresh} ]was ist das?  
+\item[\label{todo__todo000006}%
+\hypertarget{todo__todo000006}{}%
+Member \hyperlink{SlamNode_8h_a502d892a0b86363c94e2f11fb2370346}{T\-H\-R\-E\-A\-D\-\_\-\-T\-E\-R\-M\-\_\-\-M\-S} ]in Thread\-Grid wird im Destruktor thread\-::join() aus boost aufgerufen, um auf Beendigung des Threads zu warten. Slam\-Node erbt aber nicht von Thread\-S\-L\-A\-M, also besitzt es auch kein boost object thread. wäre es denkbar das auch damit zu lösen anstatt diese Zeit hier festzusetzen? 
+\end{DoxyRefList}

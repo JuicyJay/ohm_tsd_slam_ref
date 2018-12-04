@@ -1,0 +1,144 @@
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM}{\section{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-S\-L\-A\-M Class Reference}
+\label{classohm__tsd__slam__ref_1_1ThreadSLAM}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+}
+
+
+Base class implementing boost thread functionality.  
+
+
+
+
+{\ttfamily \#include $<$Thread\-S\-L\-A\-M.\-h$>$}
+
+
+
+Inheritance diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-S\-L\-A\-M\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classohm__tsd__slam__ref_1_1ThreadSLAM__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_ac2c871a0e2fcf8d5b0d8cd795d4c411c}{Thread\-S\-L\-A\-M} (obvious\-::\-Tsd\-Grid \&grid)
+\item 
+virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_ac6855fff76f89863ef91186cd097cd87}{$\sim$\-Thread\-S\-L\-A\-M} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_aa2516f5f4a5840bfc47c3314b5f62d48}{unblock} (void)
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_adddd2cc23e446ffee1d2554f9d0f3a60}{alive} (unsigned int ms)
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a3f3030728d97821ce6fb958587b93c83}{terminate\-Thread} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{event\-Loop} (void)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::thread $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_af046376720757fbc1c2302809fd6ba07}{\-\_\-thread}
+\item 
+boost\-::mutex \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_aa461c69e9be71020e371babc6e534120}{\-\_\-sleep\-Mutex}
+\item 
+boost\-::condition\-\_\-variable\-\_\-any \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a0302ee2027cf077f552395da5c618c30}{\-\_\-sleep\-Cond}
+\item 
+bool \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a303f8c9d58dca22db1f1f9c0e37cf6e4}{\-\_\-stay\-Active}
+\item 
+obvious\-::\-Tsd\-Grid \& \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_ab0eaf26f3b9c549fe0d21332f88ccc35}{\-\_\-grid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class implementing boost thread functionality. 
+
+\begin{DoxyAuthor}{Author}
+Philipp Koch, Stefan May 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_ac2c871a0e2fcf8d5b0d8cd795d4c411c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!Thread\-S\-L\-A\-M@{Thread\-S\-L\-A\-M}}
+\index{Thread\-S\-L\-A\-M@{Thread\-S\-L\-A\-M}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{Thread\-S\-L\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-Thread\-S\-L\-A\-M (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Tsd\-Grid \&}]{grid}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_ac2c871a0e2fcf8d5b0d8cd795d4c411c}
+Constructor \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_ac6855fff76f89863ef91186cd097cd87}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!$\sim$\-Thread\-S\-L\-A\-M@{$\sim$\-Thread\-S\-L\-A\-M}}
+\index{$\sim$\-Thread\-S\-L\-A\-M@{$\sim$\-Thread\-S\-L\-A\-M}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{$\sim$\-Thread\-S\-L\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::$\sim$\-Thread\-S\-L\-A\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_ac6855fff76f89863ef91186cd097cd87}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_adddd2cc23e446ffee1d2554f9d0f3a60}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!alive@{alive}}
+\index{alive@{alive}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{alive}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::alive (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ms}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_adddd2cc23e446ffee1d2554f9d0f3a60}
+Method to determine the state of a thread. Function tries to call the thread until the given time in ms runs out 
+\begin{DoxyParams}{Parameters}
+{\em ms} & time trying to call thread \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if thread could be called successfully during given ms 
+\end{DoxyReturn}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!event\-Loop@{event\-Loop}}
+\index{event\-Loop@{event\-Loop}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::event\-Loop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}
+Abstract method connected to Boost threading functionality 
+
+Implemented in \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}, \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping_a4adf91a34a9cc1c237b180d02eb0b013}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Mapping}, and \hyperlink{classohm__tsd__slam__ref_1_1ThreadGrid_ab5153ffea8c253924f5d5f1f05d9aa59}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Grid}.
+
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_a3f3030728d97821ce6fb958587b93c83}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!terminate\-Thread@{terminate\-Thread}}
+\index{terminate\-Thread@{terminate\-Thread}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{terminate\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::terminate\-Thread (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_a3f3030728d97821ce6fb958587b93c83}
+Method to terminate the thread \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_aa2516f5f4a5840bfc47c3314b5f62d48}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!unblock@{unblock}}
+\index{unblock@{unblock}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{unblock}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::unblock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_aa2516f5f4a5840bfc47c3314b5f62d48}
+Method to set a thread from sleep mode to run mode 
+
+\subsection{Member Data Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_ab0eaf26f3b9c549fe0d21332f88ccc35}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!\-\_\-grid@{\-\_\-grid}}
+\index{\-\_\-grid@{\-\_\-grid}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Tsd\-Grid\& ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-\_\-grid\hspace{0.3cm}{\ttfamily [protected]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_ab0eaf26f3b9c549fe0d21332f88ccc35}
+Reference to tsdgrid representation \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_a0302ee2027cf077f552395da5c618c30}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!\-\_\-sleep\-Cond@{\-\_\-sleep\-Cond}}
+\index{\-\_\-sleep\-Cond@{\-\_\-sleep\-Cond}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{\-\_\-sleep\-Cond}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::condition\-\_\-variable\-\_\-any ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-\_\-sleep\-Cond\hspace{0.3cm}{\ttfamily [protected]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_a0302ee2027cf077f552395da5c618c30}
+Boost condition variable for sleeping mode \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_aa461c69e9be71020e371babc6e534120}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!\-\_\-sleep\-Mutex@{\-\_\-sleep\-Mutex}}
+\index{\-\_\-sleep\-Mutex@{\-\_\-sleep\-Mutex}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{\-\_\-sleep\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-\_\-sleep\-Mutex\hspace{0.3cm}{\ttfamily [protected]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_aa461c69e9be71020e371babc6e534120}
+Boost sleeping mutex \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_a303f8c9d58dca22db1f1f9c0e37cf6e4}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!\-\_\-stay\-Active@{\-\_\-stay\-Active}}
+\index{\-\_\-stay\-Active@{\-\_\-stay\-Active}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{\-\_\-stay\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-\_\-stay\-Active\hspace{0.3cm}{\ttfamily [protected]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_a303f8c9d58dca22db1f1f9c0e37cf6e4}
+Shutdown flag \hypertarget{classohm__tsd__slam__ref_1_1ThreadSLAM_af046376720757fbc1c2302809fd6ba07}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}!\-\_\-thread@{\-\_\-thread}}
+\index{\-\_\-thread@{\-\_\-thread}!ohm_tsd_slam_ref::ThreadSLAM@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}}
+\subsubsection[{\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::thread$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M\-::\-\_\-thread\hspace{0.3cm}{\ttfamily [protected]}}}\label{classohm__tsd__slam__ref_1_1ThreadSLAM_af046376720757fbc1c2302809fd6ba07}
+Boost threading object 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ThreadSLAM_8h}{Thread\-S\-L\-A\-M.\-h}\item 
+src/\hyperlink{ThreadSLAM_8cpp}{Thread\-S\-L\-A\-M.\-cpp}\end{DoxyCompactItemize}
