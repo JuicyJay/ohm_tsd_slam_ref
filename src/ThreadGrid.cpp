@@ -146,7 +146,7 @@ bool ThreadGrid::getMapServCallBack(nav_msgs::GetMap::Request& req, nav_msgs::Ge
 	res.map.header.stamp 		= ros::Time::now();
 	_occGrid->header.seq		= frameID++;
 	_occGrid->info.map_load_time = ros::Time::now();
-	return(true)
+	return(true);
 }
 
 } /* namespace ohm_tsd_slam_ref */

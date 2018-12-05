@@ -128,11 +128,11 @@ private:
 	 * Main registration method. Aligns two laser scans and calculates the referring 2D transformation matrix.
 	 * @param sensor Laser data container
 	 * @param M Pointer to model points
-	 * @param Mvalid Pointer to model points
+	 * @param Mvalid Pointer to valid model points
 	 * @param N Pointer to normals of the model
-	 * @param Nvalid Pointer to normals of the model
+	 * @param Nvalid Pointer to valid normals of the model
 	 * @param S Pointer to scene points
-	 * @param Svalid Pointer to scene points
+	 * @param Svalid Pointer to valid scene points
 	 * @return 2D transformation matrix of type obvious::Matrix
 	 */
 	obvious::Matrix doRegistration(obvious::SensorPolar2D* sensor,

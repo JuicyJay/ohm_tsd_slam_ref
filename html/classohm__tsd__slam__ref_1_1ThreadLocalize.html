@@ -272,14 +272,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a58c3e63ca51b4f667361138ca9612a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a865325fdc2badfde0512622d52d60f46"><td class="memItemLeft" align="right" valign="top">tf::Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a865325fdc2badfde0512622d52d60f46">_tfLaser</a></td></tr>
 <tr class="separator:a865325fdc2badfde0512622d52d60f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f36ec368f39a906125435adb7fa231"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a49f36ec368f39a906125435adb7fa231">_tfFootprintFrameId</a></td></tr>
-<tr class="separator:a49f36ec368f39a906125435adb7fa231"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f3c79f1893a406885983bd8984954e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a4f3c79f1893a406885983bd8984954e2">_tfOdomFrameId</a></td></tr>
-<tr class="separator:a4f3c79f1893a406885983bd8984954e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab83a495abfe38788855cd283334052ee"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ab83a495abfe38788855cd283334052ee">_tfBaseFrameId</a></td></tr>
 <tr class="separator:ab83a495abfe38788855cd283334052ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15312866770a11e59f0e2e260a5d8c05"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a15312866770a11e59f0e2e260a5d8c05">_tfChildFrameId</a></td></tr>
 <tr class="separator:a15312866770a11e59f0e2e260a5d8c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3c79f1893a406885983bd8984954e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a4f3c79f1893a406885983bd8984954e2">_tfOdomFrameId</a></td></tr>
+<tr class="separator:a4f3c79f1893a406885983bd8984954e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f36ec368f39a906125435adb7fa231"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a49f36ec368f39a906125435adb7fa231">_tfFootprintFrameId</a></td></tr>
+<tr class="separator:a49f36ec368f39a906125435adb7fa231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50a25580c50a3b14d04a548416142d6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a50a25580c50a3b14d04a548416142d6c">_useOdomRescue</a></td></tr>
 <tr class="separator:a50a25580c50a3b14d04a548416142d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60894678d5815e42124c78eef219cf8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a60894678d5815e42124c78eef219cf8b">_odomTfIsValid</a></td></tr>
@@ -525,11 +525,11 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">sensor</td><td>Laser data container </td></tr>
     <tr><td class="paramname">M</td><td>Pointer to model points </td></tr>
-    <tr><td class="paramname">Mvalid</td><td>Pointer to model points </td></tr>
+    <tr><td class="paramname">Mvalid</td><td>Pointer to valid model points </td></tr>
     <tr><td class="paramname">N</td><td>Pointer to normals of the model </td></tr>
-    <tr><td class="paramname">Nvalid</td><td>Pointer to normals of the model </td></tr>
+    <tr><td class="paramname">Nvalid</td><td>Pointer to valid normals of the model </td></tr>
     <tr><td class="paramname">S</td><td>Pointer to scene points </td></tr>
-    <tr><td class="paramname">Svalid</td><td>Pointer to scene points </td></tr>
+    <tr><td class="paramname">Svalid</td><td>Pointer to valid scene points </td></tr>
   </table>
   </dd>
 </dl>
@@ -2172,7 +2172,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 7 2018 15:15:53 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 5 2018 18:27:11 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
