@@ -1,4 +1,5 @@
 <map id="src/SlamNode.h" name="src/SlamNode.h">
-<area shape="rect" id="node7" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="1779,88,1900,115"/>
-<area shape="rect" id="node8" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="3053,185,3163,212"/>
+<area shape="rect" id="node7" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="762,88,883,115"/>
+<area shape="rect" id="node8" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="107,185,216,212"/>
+<area shape="rect" id="node10" href="$OdometryAnalyzer_8h.html" title="OdometryAnalyzer.h" alt="" coords="568,185,708,212"/>
 </map>

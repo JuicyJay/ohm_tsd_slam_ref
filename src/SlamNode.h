@@ -44,7 +44,7 @@ class ThreadGrid;
  */
 struct TaggedSubscriber
 {
-	TaggesSubscriber(std::string topic, ThreadLocalize& localizer, ros::NodeHandle& nh):
+	TaggedSubscriber(std::string topic, ThreadLocalize& localizer, ros::NodeHandle& nh):
 		_topic(topic),
 		_localizer(&localizer),
 		_nh(&nh)
@@ -59,24 +59,22 @@ struct TaggedSubscriber
 		_localizer(NULL),
 		_nh(NULL)
 	{}
-	void switchOn(void)
+	bool topic(const std::string topic)
 	{
-		_subs = _nh->subscribe(_topic, 1, &ThreadLocalize::laserCallBack, _localizer);
+		return topic == _topic;
 	}
 	void switchOff(void)
 	{
 		_subs.shutdown();
 	}
-	///@todo was macht bool topic fct?
-	bool topic(const std::string topic)
+	void switchOn(void)
 	{
-		return topic == _topic;
+		_subs = _nh->subscribe(_topic, 1, &ThreadLocalize::laserCallBack, _localizer);
 	}
-
 	ros::Subscriber _subs;
 	std::string _topic;
 	ThreadLocalize* _localizer;
-	ros::NodeHandle _nh;
+	ros::NodeHandle* _nh;
 };
 
 /**
@@ -89,10 +87,8 @@ class SlamNode
 public:
 	/**
 	 * @brief Constructor
-	 * @brief class can be called in 2 modes, runSlam or runLocalize (run method invoked by start method)
-	 * @brief default mode: SLAM mode, generates new empty obvious::TsdGrid, dimension and resolution can be set by defines in SlamNode.h
-	 * @brief LOCALIZE mode: loads content from file at a given path, operates on a fixed model;
-	 * in the fixed model no push into the grid is needed, no thread mapping (?richtig?) object is instantiated
+	 * @brief generates new empty obvious::TsdGrid, dimension and resolution can be set by defines in SlamNode.h
+	 * instantiates pointer to ThreadGrid, ThreadMapping, ThreadLocalize and passes on pointer to single obvious::TsdGrid that has been generated
 	 */
 	SlamNode(void);
 
@@ -134,7 +130,7 @@ private:
 	 */
 	ros::NodeHandle _nh;
 	/**
-	 * Representation - instance of one TsdGrid
+	 * Representation - instance of one TsdGrid - shared by all threads by passing on a reference to this one grid
 	 */
 	obvious::TsdGrid* _grid;
 	/**
@@ -170,12 +166,11 @@ private:
 	 */
 	std::vector<TaggedSubscriber> _subsLaser;
 	/**
-	 * @todo was macht das hier?
 	 * storing _grid, _threadMapping, xOffset and yOffset of ThreadLocalize
 	 */
 	std::vector<ThreadLocalize*> _localizers;
 	/**
-	 * @todo wofür brauchen wir den service?
+	 * ROS service to start and stop SLAM
 	 */
 	ros::ServiceServer _serviceStartStopSLAM;
 };

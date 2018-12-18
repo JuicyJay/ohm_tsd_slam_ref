@@ -1,6 +1,7 @@
 <map id="src/ThreadMapping.cpp" name="src/ThreadMapping.cpp">
-<area shape="rect" id="node2" href="$ThreadMapping_8h.html" title="ThreadMapping.h" alt="" coords="127,163,250,189"/>
-<area shape="rect" id="node10" href="$SlamNode_8h.html" title="SlamNode.h" alt="" coords="1626,80,1720,107"/>
-<area shape="rect" id="node3" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="591,260,700,287"/>
-<area shape="rect" id="node13" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="1972,163,2092,189"/>
+<area shape="rect" id="node2" href="$ThreadMapping_8h.html" title="ThreadMapping.h" alt="" coords="165,163,288,189"/>
+<area shape="rect" id="node10" href="$SlamNode_8h.html" title="SlamNode.h" alt="" coords="926,80,1020,107"/>
+<area shape="rect" id="node3" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="80,260,189,287"/>
+<area shape="rect" id="node13" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="970,163,1091,189"/>
+<area shape="rect" id="node14" href="$OdometryAnalyzer_8h.html" title="OdometryAnalyzer.h" alt="" coords="776,260,916,287"/>
 </map>

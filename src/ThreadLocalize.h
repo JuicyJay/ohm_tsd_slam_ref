@@ -335,8 +335,7 @@ private:
 	 */
 	obvious::RayCastPolar2D* _rayCaster;
 	/**
-	 * ICP pair assigner
-	 * @todo wo wird der schmarrn denn verwendet bidde sachamol
+	 * ICP pair assigners
 	 */
 	obvious::PairAssignment* _assigner;
 	/**

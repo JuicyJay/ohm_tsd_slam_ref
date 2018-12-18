@@ -85,7 +85,7 @@ main node management of 2\-D slam, contains sub classes and ros interface
 Constructor. 
 
 class can be called in 2 modes, run\-Slam or run\-Localize (run method invoked by start method) default mode\-: S\-L\-A\-M mode, generates new empty obvious\-::\-Tsd\-Grid, dimension and resolution can be set by defines in \hyperlink{SlamNode_8h}{Slam\-Node.\-h} L\-O\-C\-A\-L\-I\-Z\-E mode\-: loads content from file at a given path, operates on a fixed model; in the fixed model no push into the grid is needed, no thread mapping (?richtig?) object is instantiated \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000001}{Todo}]verwirrend \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000002}{Todo}]verwirrend \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_a0dbbdf08b6ac75aba94c882715d7f49e}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}!$\sim$\-Slam\-Node@{$\sim$\-Slam\-Node}}
 \index{$\sim$\-Slam\-Node@{$\sim$\-Slam\-Node}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{$\sim$\-Slam\-Node}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::$\sim$\-Slam\-Node (
@@ -94,7 +94,7 @@ class can be called in 2 modes, run\-Slam or run\-Localize (run method invoked b
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_a0dbbdf08b6ac75aba94c882715d7f49e}
 Destructor stop all localization threads \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]geht das so mit neuer foreach schleifn? prüfen, wenn \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} erstellt ist \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000003}{Todo}]geht das so mit neuer foreach schleifn? prüfen, wenn \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} erstellt ist \end{DoxyRefDesc}
 
 
 \subsection{Member Function Documentation}
@@ -121,7 +121,7 @@ R\-O\-S service used for tilt scanner -\/ stops S\-L\-A\-M when tilt movement is
 
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000010}{Todo}]nachfragen \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000011}{Todo}]nachfragen \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_aac99efb88f38b6df5923f6a410f000a4}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}!run@{run}}
 \index{run@{run}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::run (
@@ -156,7 +156,7 @@ Rate used for occupancy grid generation Minimum time interval for new grid pub -
 \index{\-\_\-localizers@{\-\_\-localizers}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-localizers}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Thread\-Localize}$\ast$$>$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-localizers\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_abe1e2022599a8ce220de76b142486ea8}
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000013}{Todo}]was macht das hier? storing \-\_\-grid, \-\_\-thread\-Mapping, x\-Offset and y\-Offset of \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000014}{Todo}]was macht das hier? storing \-\_\-grid, \-\_\-thread\-Mapping, x\-Offset and y\-Offset of \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_a09e9b76d84f565257c0aacda187c82ec}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}!\-\_\-loop\-Rate@{\-\_\-loop\-Rate}}
 \index{\-\_\-loop\-Rate@{\-\_\-loop\-Rate}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-loop\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Rate$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-loop\-Rate\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_a09e9b76d84f565257c0aacda187c82ec}
@@ -167,7 +167,7 @@ Main node handle \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_a2941b11fc25f
 \index{\-\_\-service\-Start\-Stop\-S\-L\-A\-M@{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-service\-Start\-Stop\-S\-L\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Service\-Server ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-service\-Start\-Stop\-S\-L\-A\-M\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_a2941b11fc25f02fad3467297f0260fec}
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000014}{Todo}]wofür brauchen wir den service? \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000015}{Todo}]wofür brauchen wir den service? \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_a65b1147fbe5c773c55a7e2b640b77d01}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}!\-\_\-subs\-Laser@{\-\_\-subs\-Laser}}
 \index{\-\_\-subs\-Laser@{\-\_\-subs\-Laser}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-subs\-Laser}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Tagged\-Subscriber}$>$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-subs\-Laser\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_a65b1147fbe5c773c55a7e2b640b77d01}
@@ -181,12 +181,12 @@ Create Mapping thread instance of class \hyperlink{classohm__tsd__slam__ref_1_1T
 \index{\-\_\-x\-Off\-Factor@{\-\_\-x\-Off\-Factor}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-x\-Off\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-x\-Off\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_ad57ec9810293549dc803209a950a776f}
 X starting offset factor \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000011}{Todo}]same as \-\_\-x\-Off\-Factor -\/ prüfen, glaub das wird nicht verwendet -- launch file params auch löschen \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000012}{Todo}]same as \-\_\-x\-Off\-Factor -\/ prüfen, glaub das wird nicht verwendet -- launch file params auch löschen \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1SlamNode_a591fdd2fc92e9fd53112b36f0125cf51}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}!\-\_\-y\-Off\-Factor@{\-\_\-y\-Off\-Factor}}
 \index{\-\_\-y\-Off\-Factor@{\-\_\-y\-Off\-Factor}!ohm_tsd_slam_ref::SlamNode@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node}}
 \subsubsection[{\-\_\-y\-Off\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Slam\-Node\-::\-\_\-y\-Off\-Factor\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1SlamNode_a591fdd2fc92e9fd53112b36f0125cf51}
 Y starting offset factor \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000012}{Todo}]wofür gibt es die offset factors? im slamnode.\-cpp definier ich ja nochmal launch file params für x\-Offset u y\-Offset -\/ sehe keine Verwendung von \-\_\-y\-Off\-Factor 
+\item[\hyperlink{todo__todo000013}{Todo}]wofür gibt es die offset factors? im slamnode.\-cpp definier ich ja nochmal launch file params für x\-Offset u y\-Offset -\/ sehe keine Verwendung von \-\_\-y\-Off\-Factor 
 
 prüfen, glaub das wird nicht verwendet -- launch file params auch löschen \end{DoxyRefDesc}
 

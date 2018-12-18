@@ -38,7 +38,7 @@ ThreadLocalize::ThreadLocalize(obvious::TsdGrid* grid, ThreadMapping* mapper, ro
 										_nameSpace(nameSpace),
 										_stampLaser(ros::Time::now())
 {
-  ThreadLocalize* threadLocalize = NULL;		///todo nullptr?
+  ThreadLocalize* threadLocalize = NULL;		///todo wofür hab ich das hier eig. variable wird nicht benutzt?
 
   double distFilterMax  		= 0.0;
   double distFilterMin			= 0.0;
@@ -214,7 +214,7 @@ void ThreadLocalize::laserCallBack(const sensor_msgs::LaserScan& scan)
   }
 }
 
-tf::Transform ThreadLocalize::obviouslyMatrix3x3Totf(obvious::Matrix& ob)
+tf::Transform ThreadLocalize::obviouslyMatrix3x3ToTf(obvious::Matrix& ob)
 {
   tf::Transform tf;
   tf.setOrigin(tf::Vector3(ob(0,2), ob(1,2), 0.0));
@@ -227,7 +227,7 @@ obvious::Matrix ThreadLocalize::tfToObviouslyMatrix3x3(const tf::Transform& tf)
   obvious::Matrix ob(3,3);
   ob.setIdentity();
 
-  double theta = tf::getYaw(getRotation());
+  double theta = tf::getYaw(tf.getRotation());
   double x = tf.getOrigin().getX();
   double y = tf.getOrigin().getY();
 
@@ -287,12 +287,12 @@ void ThreadLocalize::eventLoop(void)
     unsigned int validModelPoints = _rayCaster->calcCoordsFromCurrentViewMask(&_grid, _sensor, _modelCoords, _modelNormals, _maskM);
     if(validModelPoints == 0)
     {
-      ROR_ERROR_STREAM("Localizer (" _nameSpace << ") error! Raycasting found no coordinates! \n");
+      ROS_ERROR_STREAM("Localizer (" << _nameSpace << ") error! Raycasting found no coordinates! \n");
       continue;
     }
 
     //get current scan
-    cont unsigned int validScenePoints = _sensor->dataToCartesianVectorMask(_scene, _maskS);
+    const unsigned int validScenePoints = _sensor->dataToCartesianVectorMask(_scene, _maskS);
 
     /**
      * Create Point Matrices with structure [x1 y1; x2 y2; ..]
@@ -385,7 +385,7 @@ void ThreadLocalize::init(const sensor_msgs::LaserScan& scan)
   _sensor->transform(&Tinit);
   obfloat t[2] = {startX + footPrintXoffset, startY};
   if(!_grid.freeFootprint(t, footPrintWidth, footPrintHeight))
-	  ROS_ERROR_STRAM("Localizer (" << _nameSpace << ") warning! Footprint could not be freed! \n");
+	  ROS_ERROR_STREAM("Localizer (" << _nameSpace << ") warning! Footprint could not be freed! \n");
   if(!_mapper.initialized())
 	  _mapper.initPush(_sensor);
   _initialized = true;
@@ -466,18 +466,131 @@ obvious::Matrix ThreadLocalize::doRegistration(obvious::SensorPolar2D* sensor,
   return T;
 }
 
+bool ThreadLocalize::isRegistrationError(obvious::Matrix* T, const double trnsMax, const double rotMax)
+{
+  const double deltaX 		= (*T)(0, 2);
+  const double deltaY 		= (*T)(1, 2);
+  const double trnsAbs 		= std::sqrt(deltaX * deltaX + deltaY * deltaY);
+  const double deltaPhi		= this->calcAngle(T);
+  return (trnsAbs > trnsMax) || (std::abs(std::sin(deltaPhi)) > rotMax);	//todo muss da keine klammer drum
+}
 
+void ThreadLocalize::sendTransform(obvious::Matrix* T)
+{
+  const double curTheta		= this->calcAngle(T);
+  const double posX			= (*T)(0, 2) + _gridOffSetX;
+  const double posY			= (*T)(1, 2) * _gridOffSetY;
+  //_poseStamped.header.stamp = ros::Time::now();
+  _poseStamped.header.stamp		= _stampLaser;
+  _poseStamped.pose.position.x	= posX;
+  _poseStamped.pose.position.y	= posY;
+  _poseStamped.pose.position.z	= 0.0;
+  tf::Quaternion quat;
+  quat.setEuler(0.0, 0.0, curTheta);
+  _poseStamped.pose.orientation.w	= quat.w();
+  _poseStamped.pose.orientation.x	= quat.x();
+  _poseStamped.pose.orientation.y	= quat.y();
+  _poseStamped.pose.orientation.z	= quat.z();
+  //  _tf.stamp_ = ros::Time::now();
+  _tf.stamp_ 	= _stampLaser;
+  _tf.setOrigin(tf::Vector3(posX, posY, 0.0));
+  _tf.setRotation(quat);
 
+  _posePub.publish(_poseStamped);
+  _tfBroadcaster.sendTransform(_tf);
+}
 
+void ThreadLocalize::sendNanTransform()
+{
+  _poseStamped.header.stamp 	= ros::Time::now();		//todo warum setzen wir hier ros time now und oben in sendtransform den stamplaser?
+  _poseStamped.pose.position.x	= NAN;
+  _poseStamped.pose.position.y 	= NAN;
+  _poseStamped.pose.position.z	= NAN;
+  tf::Quaternion quat;
+  quat.setEuler(NAN, NAN, NAN);
+  _poseStamped.pose.orientation.w	= quat.w();
+  _poseStamped.pose.orientation.x	= quat.x();
+  _poseStamped.pose.orientation.y	= quat.y();
+  _poseStamped.pose.orientation.z	= quat.z();
 
+  _tf.stamp_	= ros::Time::now();						//todo warum setzen wir hier ros time now und oben in sendtransform den stamplaser?
+  _tf.setOrigin(tf::Vector3(NAN, NAN, NAN));
+  _tf.setRotation(quat);
 
+  _posePub.publish(_poseStamped);
+  _tfBroadcaster.sendTransform(_tf);
+}
 
+double ThreadLocalize::calcAngle(obvious::Matrix* T)
+{
+  double angle			= 0.0;
+  const double ARCSIN	= asin((*T)(1, 0));
+  const double ARCSINEG	= asin((*T)(0, 1));
+  const double ARCOS	= acos((*T)(0, 0));
+  if((ARCSIN > 0.0) && (ARCSINEG < 0.0))
+	  angle = ARCOS;
+  else if((ARCSIN < 0.0) && (ARCSINEG > 0.0))
+	  angle = 2.0 * M_PI - ARCOS;
+  return(angle);
+}
 
+bool ThreadLocalize::isPoseChangeSignificant(obvious::Matrix* lastPose, obvious::Matrix* curPose)
+{
+  const double deltaX		= (*curPose)(0, 2) - (*lastPose)(0, 2);
+  const double deltaY		= (*curPose)(1, 2) - (*lastPose)(1, 2);
+  double deltaPhi			= this->calcAngle(curPose) - this->calcAngle(lastPose);
+  deltaPhi					= fabs(sin(deltaPhi));
+  const double trnsAbs		= sqrt(deltaX * deltaX + deltaY * deltaY);
+  return(deltaPhi > ROT_MIN || trnsAbs > TRNS_MIN);		//todo muss da keine klammer drum
+}
 
+obvious::Matrix ThreadLocalize::maskMatrix(obvious::Matrix* Mat, bool* mask, unsigned int maskSize, unsigned int validPoints)
+{
+  assert(Mat->getRows() == maskSize);
+  assert(Mat->getCols() == 2);
+  obvious::Matrix retMat(validPoints, 2);
+  unsigned int cnt = 0;
 
+  for(unsigned int i= 0; i < maskSize; i++)
+  {
+	  if(mask[i])
+	  {
+		  retMat(cnt, 0) = (*Mat)(i, 0);
+		  retMat(cnt, 1) = (*Mat)(i, 1);
+		  cnt++;
+	  }
+  }
+  return retMat;
+}
 
+//todo maybe obsolete with pca matching, definitely not nice (author unknown)
+void ThreadLocalize::reduceResolution(bool* const maskIn, obvious::Matrix* matIn, bool* const maskOut, obvious::Matrix* matOut,
+										const unsigned int pointsIn, const unsigned int pointsOut, const unsigned int reductionFactor)
+{
+  assert(pointsIn > pointsOut);
+  //todo we only support scan with even number of points like 1080. if a scan has 1081 points is notl usable for subsampling here!
+  const unsigned int factor = pointsIn / pointsOut;
+  assert(factor == reductionFactor);
 
-
-
+  unsigned int cnt = 0;
+  for(unsigned int i = 0; i < pointsIn; i++)
+  {
+	  if(!(i % factor))		//i % factor == 0
+	  {
+		  cnt++;
+		  if(maskIn[i])
+		  {
+			  maskOut[i/factor] = true;
+			  (*matOut)(i/factor, 0) = (*matIn)(i, 0);
+			  (*matOut)(i/factor, 1) = (*matIn)(i, 1);
+		  }
+		  else
+		  {
+			  maskOut[i/factor] = false;
+		  }
+	  }
+  }
+  assert(cnt == pointsOut);
+}
 
 } /* namespace ohm_tsd_slam_ref */

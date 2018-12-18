@@ -81,51 +81,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000007"></a>Namespace <a class="el" href="namespaceohm__tsd__slam__ref.html">ohm_tsd_slam_ref</a>  </dt>
+<dt><a class="anchor" id="_todo000008"></a>Namespace <a class="el" href="namespaceohm__tsd__slam__ref.html">ohm_tsd_slam_ref</a>  </dt>
 <dd>ns später ändern  </dd>
-<dt><a class="anchor" id="_todo000013"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#abe1e2022599a8ce220de76b142486ea8">ohm_tsd_slam_ref::SlamNode::_localizers</a>  </dt>
+<dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classohm__tsd__slam__ref_1_1OdometryAnalyzer.html">ohm_tsd_slam_ref::OdometryAnalyzer</a>  </dt>
+<dd>add function call in ThreadLocalize if you want to use odometry for rescue purposes  </dd>
+<dt><a class="anchor" id="_todo000014"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#abe1e2022599a8ce220de76b142486ea8">ohm_tsd_slam_ref::SlamNode::_localizers</a>  </dt>
 <dd>was macht das hier? storing _grid, _threadMapping, xOffset and yOffset of ThreadLocalize  </dd>
-<dt><a class="anchor" id="_todo000014"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a2941b11fc25f02fad3467297f0260fec">ohm_tsd_slam_ref::SlamNode::_serviceStartStopSLAM</a>  </dt>
+<dt><a class="anchor" id="_todo000015"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a2941b11fc25f02fad3467297f0260fec">ohm_tsd_slam_ref::SlamNode::_serviceStartStopSLAM</a>  </dt>
 <dd>wofür brauchen wir den service?  </dd>
-<dt><a class="anchor" id="_todo000011"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#ad57ec9810293549dc803209a950a776f">ohm_tsd_slam_ref::SlamNode::_xOffFactor</a>  </dt>
+<dt><a class="anchor" id="_todo000012"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#ad57ec9810293549dc803209a950a776f">ohm_tsd_slam_ref::SlamNode::_xOffFactor</a>  </dt>
 <dd>same as _xOffFactor - prüfen, glaub das wird nicht verwendet &ndash; launch file params auch löschen  </dd>
-<dt><a class="anchor" id="_todo000012"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a591fdd2fc92e9fd53112b36f0125cf51">ohm_tsd_slam_ref::SlamNode::_yOffFactor</a>  </dt>
+<dt><a class="anchor" id="_todo000013"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a591fdd2fc92e9fd53112b36f0125cf51">ohm_tsd_slam_ref::SlamNode::_yOffFactor</a>  </dt>
 <dd><p class="startdd">wofür gibt es die offset factors? im slamnode.cpp definier ich ja nochmal launch file params für xOffset u yOffset - sehe keine Verwendung von _yOffFactor </p>
 <p class="enddd">prüfen, glaub das wird nicht verwendet &ndash; launch file params auch löschen  </p>
 </dd>
-<dt><a class="anchor" id="_todo000010"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a5b4ee64a1d3b1ead996762adfc95ad94">ohm_tsd_slam_ref::SlamNode::callBackServiceStartStopSLAM</a>  (ohm_tsd_slam_ref::StartStopSLAM::Request &amp;req, ohm_tsd_slam_ref::StartStopSLAM::Response &amp;res)</dt>
+<dt><a class="anchor" id="_todo000011"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a5b4ee64a1d3b1ead996762adfc95ad94">ohm_tsd_slam_ref::SlamNode::callBackServiceStartStopSLAM</a>  (ohm_tsd_slam_ref::StartStopSLAM::Request &amp;req, ohm_tsd_slam_ref::StartStopSLAM::Response &amp;res)</dt>
 <dd>nachfragen  </dd>
-<dt><a class="anchor" id="_todo000001"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#af35bd7adca13df47579a682ab3bb827d">ohm_tsd_slam_ref::SlamNode::SlamNode</a>  (void)</dt>
+<dt><a class="anchor" id="_todo000002"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#af35bd7adca13df47579a682ab3bb827d">ohm_tsd_slam_ref::SlamNode::SlamNode</a>  (void)</dt>
 <dd>verwirrend  </dd>
-<dt><a class="anchor" id="_todo000002"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a0dbbdf08b6ac75aba94c882715d7f49e">ohm_tsd_slam_ref::SlamNode::~SlamNode</a>  ()</dt>
+<dt><a class="anchor" id="_todo000003"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1SlamNode.html#a0dbbdf08b6ac75aba94c882715d7f49e">ohm_tsd_slam_ref::SlamNode::~SlamNode</a>  ()</dt>
 <dd>geht das so mit neuer foreach schleifn? prüfen, wenn ThreadLocalize erstellt ist  </dd>
-<dt><a class="anchor" id="_todo000008"></a>Class <a class="el" href="structohm__tsd__slam__ref_1_1TaggedSubscriber.html">ohm_tsd_slam_ref::TaggedSubscriber</a>  </dt>
+<dt><a class="anchor" id="_todo000009"></a>Class <a class="el" href="structohm__tsd__slam__ref_1_1TaggedSubscriber.html">ohm_tsd_slam_ref::TaggedSubscriber</a>  </dt>
 <dd>nachfragen  </dd>
-<dt><a class="anchor" id="_todo000009"></a>Member <a class="el" href="structohm__tsd__slam__ref_1_1TaggedSubscriber.html#a6d4ad13158333a16725cdc1cdd6ab3c2">ohm_tsd_slam_ref::TaggedSubscriber::topic</a>  (const std::string topic)</dt>
+<dt><a class="anchor" id="_todo000010"></a>Member <a class="el" href="structohm__tsd__slam__ref_1_1TaggedSubscriber.html#a6d4ad13158333a16725cdc1cdd6ab3c2">ohm_tsd_slam_ref::TaggedSubscriber::topic</a>  (const std::string topic)</dt>
 <dd>was macht bool topic fct?  </dd>
-<dt><a class="anchor" id="_todo000018"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#a3e1350e3d4943ab408ae9b0935300972">ohm_tsd_slam_ref::ThreadGrid::_occGridContent</a>  </dt>
+<dt><a class="anchor" id="_todo000019"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#a3e1350e3d4943ab408ae9b0935300972">ohm_tsd_slam_ref::ThreadGrid::_occGridContent</a>  </dt>
 <dd>eventuell abändern, veraltet  </dd>
-<dt><a class="anchor" id="_todo000017"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#ab5153ffea8c253924f5d5f1f05d9aa59">ohm_tsd_slam_ref::ThreadGrid::eventLoop</a>  (void)</dt>
+<dt><a class="anchor" id="_todo000018"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#ab5153ffea8c253924f5d5f1f05d9aa59">ohm_tsd_slam_ref::ThreadGrid::eventLoop</a>  (void)</dt>
 <dd><p class="startdd">können wir bitttttte die occupied cells berechnung mal durchgehen </p>
 <p class="enddd">unsigned char* colorBuffer - std::vector?  </p>
 </dd>
-<dt><a class="anchor" id="_todo000015"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#a23ff222ecd6e64afde2e8c926e40889c">ohm_tsd_slam_ref::ThreadGrid::ThreadGrid</a>  (obvious::TsdGrid *grid, ros::NodeHandle *const nh, const double xOffset, const double yOffset)</dt>
+<dt><a class="anchor" id="_todo000016"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadGrid.html#a23ff222ecd6e64afde2e8c926e40889c">ohm_tsd_slam_ref::ThreadGrid::ThreadGrid</a>  (obvious::TsdGrid *grid, ros::NodeHandle *const nh, const double xOffset, const double yOffset)</dt>
 <dd>warum prvNh ohne string template &lt;&gt;  </dd>
-<dt><a class="anchor" id="_todo000021"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a45c7b109a3a9f22e0c60111c58eb0dd3">ohm_tsd_slam_ref::ThreadLocalize::_assigner</a>  </dt>
+<dt><a class="anchor" id="_todo000022"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a45c7b109a3a9f22e0c60111c58eb0dd3">ohm_tsd_slam_ref::ThreadLocalize::_assigner</a>  </dt>
 <dd>wo wird der schmarrn denn verwendet bidde sachamol  </dd>
-<dt><a class="anchor" id="_todo000019"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ad1b612e37ab54ffe1958cac7d5f9c89c">ohm_tsd_slam_ref::ThreadLocalize::_dataMutex</a>  </dt>
+<dt><a class="anchor" id="_todo000020"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ad1b612e37ab54ffe1958cac7d5f9c89c">ohm_tsd_slam_ref::ThreadLocalize::_dataMutex</a>  </dt>
 <dd>either this or flags obsolete  </dd>
-<dt><a class="anchor" id="_todo000022"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a4444f42e17414907a35919adc4904268">ohm_tsd_slam_ref::ThreadLocalize::_filterReciprocal</a>  </dt>
+<dt><a class="anchor" id="_todo000023"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a4444f42e17414907a35919adc4904268">ohm_tsd_slam_ref::ThreadLocalize::_filterReciprocal</a>  </dt>
 <dd>what is this?  </dd>
-<dt><a class="anchor" id="_todo000020"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a2e9f4af9a78a5c16b1a4966b1e28a27b">ohm_tsd_slam_ref::ThreadLocalize::_ranEpsThresh</a>  </dt>
+<dt><a class="anchor" id="_todo000021"></a>Member <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a2e9f4af9a78a5c16b1a4966b1e28a27b">ohm_tsd_slam_ref::ThreadLocalize::_ranEpsThresh</a>  </dt>
 <dd>was ist das?  </dd>
-<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="SlamNode_8h.html#a502d892a0b86363c94e2f11fb2370346">THREAD_TERM_MS</a>  </dt>
+<dt><a class="anchor" id="_todo000007"></a>Member <a class="el" href="SlamNode_8h.html#a502d892a0b86363c94e2f11fb2370346">THREAD_TERM_MS</a>  </dt>
 <dd>in ThreadGrid wird im Destruktor thread::join() aus boost aufgerufen, um auf Beendigung des Threads zu warten. SlamNode erbt aber nicht von ThreadSLAM, also besitzt es auch kein boost object thread. wäre es denkbar das auch damit zu lösen anstatt diese Zeit hier festzusetzen? </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 5 2018 18:27:10 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2018 15:07:02 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

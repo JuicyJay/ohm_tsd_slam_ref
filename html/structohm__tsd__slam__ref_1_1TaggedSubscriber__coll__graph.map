@@ -1,5 +1,6 @@
 <map id="ohm_tsd_slam_ref::TaggedSubscriber" name="ohm_tsd_slam_ref::TaggedSubscriber">
-<area shape="rect" id="node2" href="$classohm__tsd__slam__ref_1_1ThreadLocalize.html" title="ohm_tsd_slam_ref::Thread\lLocalize" alt="" coords="6,190,183,231"/>
-<area shape="rect" id="node3" href="$classohm__tsd__slam__ref_1_1ThreadSLAM.html" title="Base class implementing boost thread functionality. " alt="" coords="7,5,220,32"/>
-<area shape="rect" id="node4" href="$classohm__tsd__slam__ref_1_1ThreadMapping.html" title="Implements a thread updating an obvious:TsdGrid. " alt="" coords="111,83,288,125"/>
+<area shape="rect" id="node2" href="$classohm__tsd__slam__ref_1_1ThreadLocalize.html" title="ohm_tsd_slam_ref::Thread\lLocalize" alt="" coords="609,34,786,75"/>
+<area shape="rect" id="node3" href="$classohm__tsd__slam__ref_1_1ThreadSLAM.html" title="Base class implementing boost thread functionality. " alt="" coords="5,5,219,32"/>
+<area shape="rect" id="node5" href="$classohm__tsd__slam__ref_1_1ThreadMapping.html" title="Implements a thread updating an obvious:TsdGrid. " alt="" coords="278,34,455,75"/>
+<area shape="rect" id="node4" href="$classohm__tsd__slam__ref_1_1OdometryAnalyzer.html" title="analyze and incorporate odometry as a rescue in case localization is lost " alt="" coords="269,99,464,141"/>
 </map>

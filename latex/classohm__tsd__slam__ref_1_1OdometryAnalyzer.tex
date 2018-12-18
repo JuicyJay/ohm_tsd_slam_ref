@@ -1,0 +1,84 @@
+\hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer}{\section{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Odometry\-Analyzer Class Reference}
+\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer}\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+}
+
+
+analyze and incorporate odometry as a rescue in case localization is lost  
+
+
+
+
+{\ttfamily \#include $<$Odometry\-Analyzer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a32f143dbc8a1a2756f0fad801a4d045c}{Odometry\-Analyzer} (obvious\-::\-Tsd\-Grid $\ast$grid)
+\item 
+virtual \hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a3b20053305dff88a59b1190ddb5d24cb}{$\sim$\-Odometry\-Analyzer} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a9d30f2e79d4c70ee14514ed76322d37a}{odom\-Rescue\-Init} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a0b4ed00f6116e9c60ee570604d90bc5b}{odom\-Rescue\-Update} ()
+\item 
+void \hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer_ae84beee074e2e89a4af099656efad5ae}{odom\-Rescue\-Check} (obvious\-::\-Matrix \&T)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+analyze and incorporate odometry as a rescue in case localization is lost 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]add function call in \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize}{Thread\-Localize} if you want to use odometry for rescue purposes \end{DoxyRefDesc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a32f143dbc8a1a2756f0fad801a4d045c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}!Odometry\-Analyzer@{Odometry\-Analyzer}}
+\index{Odometry\-Analyzer@{Odometry\-Analyzer}!ohm_tsd_slam_ref::OdometryAnalyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+\subsubsection[{Odometry\-Analyzer}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer\-::\-Odometry\-Analyzer (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Tsd\-Grid $\ast$}]{grid}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a32f143dbc8a1a2756f0fad801a4d045c}
+\hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a3b20053305dff88a59b1190ddb5d24cb}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}!$\sim$\-Odometry\-Analyzer@{$\sim$\-Odometry\-Analyzer}}
+\index{$\sim$\-Odometry\-Analyzer@{$\sim$\-Odometry\-Analyzer}!ohm_tsd_slam_ref::OdometryAnalyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+\subsubsection[{$\sim$\-Odometry\-Analyzer}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer\-::$\sim$\-Odometry\-Analyzer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a3b20053305dff88a59b1190ddb5d24cb}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer_ae84beee074e2e89a4af099656efad5ae}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}!odom\-Rescue\-Check@{odom\-Rescue\-Check}}
+\index{odom\-Rescue\-Check@{odom\-Rescue\-Check}!ohm_tsd_slam_ref::OdometryAnalyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+\subsubsection[{odom\-Rescue\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer\-::odom\-Rescue\-Check (
+\begin{DoxyParamCaption}
+\item[{obvious\-::\-Matrix \&}]{T}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer_ae84beee074e2e89a4af099656efad5ae}
+check if slam transformation is plausible; if not -\/ overwrite transformation with odometry 
+\begin{DoxyParams}{Parameters}
+{\em T} & Transformation matrix to check and correct \\
+\hline
+\end{DoxyParams}
+\hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a9d30f2e79d4c70ee14514ed76322d37a}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}!odom\-Rescue\-Init@{odom\-Rescue\-Init}}
+\index{odom\-Rescue\-Init@{odom\-Rescue\-Init}!ohm_tsd_slam_ref::OdometryAnalyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+\subsubsection[{odom\-Rescue\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer\-::odom\-Rescue\-Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a9d30f2e79d4c70ee14514ed76322d37a}
+initialize odometry rescue module, get tf and map \hypertarget{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a0b4ed00f6116e9c60ee570604d90bc5b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}!odom\-Rescue\-Update@{odom\-Rescue\-Update}}
+\index{odom\-Rescue\-Update@{odom\-Rescue\-Update}!ohm_tsd_slam_ref::OdometryAnalyzer@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer}}
+\subsubsection[{odom\-Rescue\-Update}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Odometry\-Analyzer\-::odom\-Rescue\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classohm__tsd__slam__ref_1_1OdometryAnalyzer_a0b4ed00f6116e9c60ee570604d90bc5b}
+updates odometry tf data if a new scan comes in 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{OdometryAnalyzer_8h}{Odometry\-Analyzer.\-h}\item 
+src/\hyperlink{OdometryAnalyzer_8cpp}{Odometry\-Analyzer.\-cpp}\end{DoxyCompactItemize}

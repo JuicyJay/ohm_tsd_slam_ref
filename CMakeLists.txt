@@ -143,6 +143,11 @@ link_directories(
 ## Declare a C++ executable
  add_executable(slam_node src/slam_node.cpp
                           src/SlamNode.cpp
+                          src/ThreadLocalize.cpp
+                          src/ThreadGrid.cpp
+                          src/ThreadMapping.cpp
+                          src/ThreadSLAM.cpp
+                          src/OdometryAnalyzer.cpp
                                       )
 
 ## Add cmake target dependencies of the executable

@@ -175,7 +175,7 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 <p>class can be called in 2 modes, runSlam or runLocalize (run method invoked by start method) default mode: SLAM mode, generates new empty obvious::TsdGrid, dimension and resolution can be set by defines in <a class="el" href="SlamNode_8h.html">SlamNode.h</a> LOCALIZE mode: loads content from file at a given path, operates on a fixed model; in the fixed model no push into the grid is needed, no thread mapping (?richtig?) object is instantiated </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>verwirrend </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>verwirrend </dd></dl>
 
 </div>
 </div>
@@ -200,7 +200,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Destructor stop all localization threads </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>geht das so mit neuer foreach schleifn? prüfen, wenn <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html">ThreadLocalize</a> erstellt ist </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>geht das so mit neuer foreach schleifn? prüfen, wenn <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html">ThreadLocalize</a> erstellt ist </dd></dl>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>nachfragen </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>nachfragen </dd></dl>
 
 </div>
 </div>
@@ -385,7 +385,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd>was macht das hier? storing _grid, _threadMapping, xOffset and yOffset of <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html">ThreadLocalize</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>was macht das hier? storing _grid, _threadMapping, xOffset and yOffset of <a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html">ThreadLocalize</a> </dd></dl>
 
 </div>
 </div>
@@ -448,7 +448,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>wofür brauchen wir den service? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Todo:</a></b></dt><dd>wofür brauchen wir den service? </dd></dl>
 
 </div>
 </div>
@@ -533,7 +533,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>X starting offset factor </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>same as _xOffFactor - prüfen, glaub das wird nicht verwendet &ndash; launch file params auch löschen </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>same as _xOffFactor - prüfen, glaub das wird nicht verwendet &ndash; launch file params auch löschen </dd></dl>
 
 </div>
 </div>
@@ -555,7 +555,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Y starting offset factor </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd><p class="startdd">wofür gibt es die offset factors? im slamnode.cpp definier ich ja nochmal launch file params für xOffset u yOffset - sehe keine Verwendung von _yOffFactor </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd><p class="startdd">wofür gibt es die offset factors? im slamnode.cpp definier ich ja nochmal launch file params für xOffset u yOffset - sehe keine Verwendung von _yOffFactor </p>
 <p class="enddd">prüfen, glaub das wird nicht verwendet &ndash; launch file params auch löschen </p>
 </dd></dl>
 
@@ -568,7 +568,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 5 2018 18:27:11 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2018 15:07:02 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

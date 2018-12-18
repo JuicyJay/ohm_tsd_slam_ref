@@ -20,7 +20,7 @@ Collaboration diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{classohm__tsd__slam__ref_1_1ThreadLocalize__coll__graph}
+\includegraphics[width=350pt]{classohm__tsd__slam__ref_1_1ThreadLocalize__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -28,14 +28,14 @@ Collaboration diagram for ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-:\-:Thread\-Localize\
 \item 
 \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a6664fba91fb551b13cf721638b55f36e}{Thread\-Localize} (obvious\-::\-Tsd\-Grid $\ast$grid, \hyperlink{classohm__tsd__slam__ref_1_1ThreadMapping}{Thread\-Mapping} $\ast$mapper, ros\-::\-Node\-Handle $\ast$nh, std\-::string name\-Space, const double x\-Offset, const double y\-Offset)
 \item 
-virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}{$\sim$\-Thread\-Localize} ()
+virtual \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6d771a1b24111bff419ecfed45ee470}{$\sim$\-Thread\-Localize} ()
 \item 
 void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ab93dfc8a688c178b641ef5deec94bf91}{laser\-Call\-Back} (const sensor\-\_\-msgs\-::\-Laser\-Scan \&scan)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}{event\-Loop} (void)
+virtual void \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ac2ee24d1021f03eaa4abf6420bea46b4}{event\-Loop} (void)
 \end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -98,7 +98,7 @@ std\-::string \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ae67e48692ae
 \item 
 ros\-::\-Time \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_acf1975963191b84dd1fda914a4cc15ae}{\-\_\-stamp\-Laser}
 \item 
-Odometry\-Analyzer $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}{\-\_\-odom\-Analyzer}
+\hyperlink{classohm__tsd__slam__ref_1_1OdometryAnalyzer}{Odometry\-Analyzer} $\ast$ \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}{\-\_\-odom\-Analyzer}
 \item 
 boost\-::mutex \hyperlink{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}{\-\_\-data\-Mutex}
 \item 
@@ -239,13 +239,21 @@ Constructor
 {\em y\-Offset} & Origin y position \\
 \hline
 \end{DoxyParams}
-\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!$\sim$\-Thread\-Localize@{$\sim$\-Thread\-Localize}}
+todo nullptr? bzw wofür hab ich das hier eig. variable wird nicht benutzt?
+
+Random\-Matcher options
+
+todo W\-A\-R\-U\-M H\-I\-E\-R name\-Space und nicht \-\_\-name\-Space wie unten
+
+todo nullptr? unten auch?
+
+todo wofür wird der genullt? wird gleich hier unten initialisiert \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6d771a1b24111bff419ecfed45ee470}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!$\sim$\-Thread\-Localize@{$\sim$\-Thread\-Localize}}
 \index{$\sim$\-Thread\-Localize@{$\sim$\-Thread\-Localize}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
-\subsubsection[{$\sim$\-Thread\-Localize}]{\setlength{\rightskip}{0pt plus 5cm}virtual ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::$\sim$\-Thread\-Localize (
+\subsubsection[{$\sim$\-Thread\-Localize}]{\setlength{\rightskip}{0pt plus 5cm}ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::$\sim$\-Thread\-Localize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4cb409859b390b9b1082b8a56d760f5f}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad6d771a1b24111bff419ecfed45ee470}
 Destructor 
 
 \subsection{Member Function Documentation}
@@ -297,14 +305,14 @@ Main registration method. Aligns two laser scans and calculates the referring 2\
 \begin{DoxyReturn}{Returns}
 2\-D transformation matrix of type obvious\-::\-Matrix 
 \end{DoxyReturn}
-\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!event\-Loop@{event\-Loop}}
+\hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ac2ee24d1021f03eaa4abf6420bea46b4}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!event\-Loop@{event\-Loop}}
 \index{event\-Loop@{event\-Loop}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
-\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::event\-Loop (
+\subsubsection[{event\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::event\-Loop (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a93b32600effe05fe0db9fdf74cd40aa7}
-Abstract function derived from base class \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM}{Thread\-S\-L\-A\-M}. Consists of a loop the thread never leaves until a termination call occurs. 
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ac2ee24d1021f03eaa4abf6420bea46b4}
+Abstract function derived from base class \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM}{Thread\-S\-L\-A\-M}. Consists of a loop the thread never leaves until a termination call occurs. Create Point Matrices with structure \mbox{[}x1 y1; x2 y2; ..\mbox{]} M, N and S are matrices that preserve the ray model of a laser scanner Xvalid matrices are matrices that do not preserve the ray model but contain only valid points (mask applied) T transformation
 
 Implements \hyperlink{classohm__tsd__slam__ref_1_1ThreadSLAM_a7f8eec542ea75b833d981b9c4af5beb0}{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-S\-L\-A\-M}.
 
@@ -481,12 +489,12 @@ converted obvious\-::\-Matrix
 \index{\-\_\-assigner@{\-\_\-assigner}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-assigner}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Pair\-Assignment$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-assigner\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a45c7b109a3a9f22e0c60111c58eb0dd3}
 I\-C\-P pair assigner \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000021}{Todo}]wo wird der schmarrn denn verwendet bidde sachamol \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000022}{Todo}]wo wird der schmarrn denn verwendet bidde sachamol \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-data\-Mutex@{\-\_\-data\-Mutex}}
 \index{\-\_\-data\-Mutex@{\-\_\-data\-Mutex}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-data\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-data\-Mutex\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_ad1b612e37ab54ffe1958cac7d5f9c89c}
 Mutex to synchronize main thread (subscriber) and thread event loop \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000019}{Todo}]either this or flags obsolete \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000020}{Todo}]either this or flags obsolete \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a34dc7fcb1cc798542270309014f09b93}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-estimator@{\-\_\-estimator}}
 \index{\-\_\-estimator@{\-\_\-estimator}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-estimator}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-I\-Rigid\-Estimator$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-estimator\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a34dc7fcb1cc798542270309014f09b93}
@@ -500,7 +508,7 @@ I\-C\-P distance filter \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_
 \index{\-\_\-filter\-Reciprocal@{\-\_\-filter\-Reciprocal}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-filter\-Reciprocal}]{\setlength{\rightskip}{0pt plus 5cm}obvious\-::\-Reciprocal\-Filter$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-filter\-Reciprocal\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a4444f42e17414907a35919adc4904268}
 I\-C\-P reciprocal filter \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000022}{Todo}]what is this? \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000023}{Todo}]what is this? \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_af9493e2cbbce37f693bbe632374d0d2a}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-grid\-Height@{\-\_\-grid\-Height}}
 \index{\-\_\-grid\-Height@{\-\_\-grid\-Height}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-grid\-Height}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-grid\-Height\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_af9493e2cbbce37f693bbe632374d0d2a}
@@ -551,7 +559,7 @@ namespace for all topics and services \hypertarget{classohm__tsd__slam__ref_1_1T
 \subsubsection[{\-\_\-nh}]{\setlength{\rightskip}{0pt plus 5cm}ros\-::\-Node\-Handle$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-nh\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a339ec43d3843e2049120afd424a636f7}
 Pointer to main Node\-Handle \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-odom\-Analyzer@{\-\_\-odom\-Analyzer}}
 \index{\-\_\-odom\-Analyzer@{\-\_\-odom\-Analyzer}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
-\subsubsection[{\-\_\-odom\-Analyzer}]{\setlength{\rightskip}{0pt plus 5cm}Odometry\-Analyzer$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-odom\-Analyzer\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}
+\subsubsection[{\-\_\-odom\-Analyzer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Odometry\-Analyzer}$\ast$ ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-odom\-Analyzer\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a719b8e1a97ec5ba8e859f24b416699a0}
 Pointer to odometry analyzer class \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a60894678d5815e42124c78eef219cf8b}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-odom\-Tf\-Is\-Valid@{\-\_\-odom\-Tf\-Is\-Valid}}
 \index{\-\_\-odom\-Tf\-Is\-Valid@{\-\_\-odom\-Tf\-Is\-Valid}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-odom\-Tf\-Is\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-odom\-Tf\-Is\-Valid\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a60894678d5815e42124c78eef219cf8b}
@@ -571,7 +579,7 @@ Matcher instance \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4a
 \index{\-\_\-ran\-Eps\-Thresh@{\-\_\-ran\-Eps\-Thresh}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-ran\-Eps\-Thresh}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Eps\-Thresh\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a2e9f4af9a78a5c16b1a4966b1e28a27b}
 Threshold for experimental registration algorithm \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000020}{Todo}]was ist das? \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000021}{Todo}]was ist das? \end{DoxyRefDesc}
 \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_a5ab8f03d41a726e561c95be6d6f090a7}{\index{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}!\-\_\-ran\-Phi\-Max@{\-\_\-ran\-Phi\-Max}}
 \index{\-\_\-ran\-Phi\-Max@{\-\_\-ran\-Phi\-Max}!ohm_tsd_slam_ref::ThreadLocalize@{ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize}}
 \subsubsection[{\-\_\-ran\-Phi\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-ran\-Phi\-Max\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_a5ab8f03d41a726e561c95be6d6f090a7}
@@ -658,6 +666,7 @@ Initial x\-Offset \hypertarget{classohm__tsd__slam__ref_1_1ThreadLocalize_afd925
 \subsubsection[{\-\_\-y\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}const double ohm\-\_\-tsd\-\_\-slam\-\_\-ref\-::\-Thread\-Localize\-::\-\_\-y\-Offset\hspace{0.3cm}{\ttfamily [private]}}}\label{classohm__tsd__slam__ref_1_1ThreadLocalize_afd9255f70ea924f91b0e628d20245803}
 Initial y\-Offset 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{ThreadLocalize_8h}{Thread\-Localize.\-h}\end{DoxyCompactItemize}
+src/\hyperlink{ThreadLocalize_8h}{Thread\-Localize.\-h}\item 
+src/\hyperlink{ThreadLocalize_8cpp}{Thread\-Localize.\-cpp}\end{DoxyCompactItemize}

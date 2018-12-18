@@ -41,6 +41,7 @@ public:
 	virtual ~ThreadMapping();
 	/**
 	 * Method to add an instance of SensorPolar2D to the queue
+	 * called by ThreadLocalize if pose change is significant
 	 * @param sensor new sensor data (pose, laser, mask..)
 	 */
 	void queuePush(obvious::SensorPolar2D* sensor);

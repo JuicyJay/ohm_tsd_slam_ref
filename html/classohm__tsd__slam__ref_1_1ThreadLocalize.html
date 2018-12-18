@@ -113,15 +113,15 @@ Collaboration diagram for ohm_tsd_slam_ref::ThreadLocalize:</div>
 <div class="dyncontent">
 <div class="center"><img src="classohm__tsd__slam__ref_1_1ThreadLocalize__coll__graph.png" border="0" usemap="#ohm__tsd__slam__ref_1_1ThreadLocalize_coll__map" alt="Collaboration graph"/></div>
 <map name="ohm__tsd__slam__ref_1_1ThreadLocalize_coll__map" id="ohm__tsd__slam__ref_1_1ThreadLocalize_coll__map">
-<area shape="rect" id="node2" href="classohm__tsd__slam__ref_1_1ThreadSLAM.html" title="Base class implementing boost thread functionality. " alt="" coords="5,5,219,32"/><area shape="rect" id="node3" href="classohm__tsd__slam__ref_1_1ThreadMapping.html" title="Implements a thread updating an obvious:TsdGrid. " alt="" coords="110,83,287,125"/></map>
+<area shape="rect" id="node2" href="classohm__tsd__slam__ref_1_1ThreadSLAM.html" title="Base class implementing boost thread functionality. " alt="" coords="5,5,219,32"/><area shape="rect" id="node4" href="classohm__tsd__slam__ref_1_1ThreadMapping.html" title="Implements a thread updating an obvious:TsdGrid. " alt="" coords="278,34,455,75"/><area shape="rect" id="node3" href="classohm__tsd__slam__ref_1_1OdometryAnalyzer.html" title="analyze and incorporate odometry as a rescue in case localization is lost " alt="" coords="269,99,464,141"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6664fba91fb551b13cf721638b55f36e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a6664fba91fb551b13cf721638b55f36e">ThreadLocalize</a> (obvious::TsdGrid *grid, <a class="el" href="classohm__tsd__slam__ref_1_1ThreadMapping.html">ThreadMapping</a> *mapper, ros::NodeHandle *nh, std::string nameSpace, const double xOffset, const double yOffset)</td></tr>
 <tr class="separator:a6664fba91fb551b13cf721638b55f36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb409859b390b9b1082b8a56d760f5f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a4cb409859b390b9b1082b8a56d760f5f">~ThreadLocalize</a> ()</td></tr>
-<tr class="separator:a4cb409859b390b9b1082b8a56d760f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d771a1b24111bff419ecfed45ee470"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ad6d771a1b24111bff419ecfed45ee470">~ThreadLocalize</a> ()</td></tr>
+<tr class="separator:ad6d771a1b24111bff419ecfed45ee470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab93dfc8a688c178b641ef5deec94bf91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ab93dfc8a688c178b641ef5deec94bf91">laserCallBack</a> (const sensor_msgs::LaserScan &amp;scan)</td></tr>
 <tr class="separator:ab93dfc8a688c178b641ef5deec94bf91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classohm__tsd__slam__ref_1_1ThreadSLAM"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classohm__tsd__slam__ref_1_1ThreadSLAM')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classohm__tsd__slam__ref_1_1ThreadSLAM.html">ohm_tsd_slam_ref::ThreadSLAM</a></td></tr>
@@ -138,8 +138,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a93b32600effe05fe0db9fdf74cd40aa7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a93b32600effe05fe0db9fdf74cd40aa7">eventLoop</a> (void)</td></tr>
-<tr class="separator:a93b32600effe05fe0db9fdf74cd40aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ee24d1021f03eaa4abf6420bea46b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ac2ee24d1021f03eaa4abf6420bea46b4">eventLoop</a> (void)</td></tr>
+<tr class="separator:ac2ee24d1021f03eaa4abf6420bea46b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -201,7 +201,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae67e48692aef6eadb8a12c2c89362c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf1975963191b84dd1fda914a4cc15ae"><td class="memItemLeft" align="right" valign="top">ros::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#acf1975963191b84dd1fda914a4cc15ae">_stampLaser</a></td></tr>
 <tr class="separator:acf1975963191b84dd1fda914a4cc15ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a719b8e1a97ec5ba8e859f24b416699a0"><td class="memItemLeft" align="right" valign="top">OdometryAnalyzer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a719b8e1a97ec5ba8e859f24b416699a0">_odomAnalyzer</a></td></tr>
+<tr class="memitem:a719b8e1a97ec5ba8e859f24b416699a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classohm__tsd__slam__ref_1_1OdometryAnalyzer.html">OdometryAnalyzer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#a719b8e1a97ec5ba8e859f24b416699a0">_odomAnalyzer</a></td></tr>
 <tr class="separator:a719b8e1a97ec5ba8e859f24b416699a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b612e37ab54ffe1958cac7d5f9c89c"><td class="memItemLeft" align="right" valign="top">boost::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classohm__tsd__slam__ref_1_1ThreadLocalize.html#ad1b612e37ab54ffe1958cac7d5f9c89c">_dataMutex</a></td></tr>
 <tr class="separator:ad1b612e37ab54ffe1958cac7d5f9c89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,10 +399,15 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>todo nullptr? bzw wofür hab ich das hier eig. variable wird nicht benutzt?</p>
+<p>RandomMatcher options</p>
+<p>todo WARUM HIER nameSpace und nicht _nameSpace wie unten</p>
+<p>todo nullptr? unten auch?</p>
+<p>todo wofür wird der genullt? wird gleich hier unten initialisiert </p>
 
 </div>
 </div>
-<a class="anchor" id="a4cb409859b390b9b1082b8a56d760f5f"></a>
+<a class="anchor" id="ad6d771a1b24111bff419ecfed45ee470"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -410,7 +415,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual ohm_tsd_slam_ref::ThreadLocalize::~ThreadLocalize </td>
+          <td class="memname">ohm_tsd_slam_ref::ThreadLocalize::~ThreadLocalize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -537,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a93b32600effe05fe0db9fdf74cd40aa7"></a>
+<a class="anchor" id="ac2ee24d1021f03eaa4abf6420bea46b4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -545,7 +550,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ohm_tsd_slam_ref::ThreadLocalize::eventLoop </td>
+          <td class="memname">void ohm_tsd_slam_ref::ThreadLocalize::eventLoop </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -559,6 +564,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Abstract function derived from base class <a class="el" href="classohm__tsd__slam__ref_1_1ThreadSLAM.html" title="Base class implementing boost thread functionality. ">ThreadSLAM</a>. Consists of a loop the thread never leaves until a termination call occurs. </p>
+<p>Create Point Matrices with structure [x1 y1; x2 y2; ..] M, N and S are matrices that preserve the ray model of a laser scanner Xvalid matrices are matrices that do not preserve the ray model but contain only valid points (mask applied) T transformation</p>
 
 <p>Implements <a class="el" href="classohm__tsd__slam__ref_1_1ThreadSLAM.html#a7f8eec542ea75b833d981b9c4af5beb0">ohm_tsd_slam_ref::ThreadSLAM</a>.</p>
 
@@ -983,7 +989,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>ICP pair assigner </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>wo wird der schmarrn denn verwendet bidde sachamol </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>wo wird der schmarrn denn verwendet bidde sachamol </dd></dl>
 
 </div>
 </div>
@@ -1005,7 +1011,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Mutex to synchronize main thread (subscriber) and thread event loop </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>either this or flags obsolete </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>either this or flags obsolete </dd></dl>
 
 </div>
 </div>
@@ -1090,7 +1096,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>ICP reciprocal filter </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>what is this? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>what is this? </dd></dl>
 
 </div>
 </div>
@@ -1438,7 +1444,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">OdometryAnalyzer* ohm_tsd_slam_ref::ThreadLocalize::_odomAnalyzer</td>
+          <td class="memname"><a class="el" href="classohm__tsd__slam__ref_1_1OdometryAnalyzer.html">OdometryAnalyzer</a>* ohm_tsd_slam_ref::ThreadLocalize::_odomAnalyzer</td>
         </tr>
       </table>
   </td>
@@ -1574,7 +1580,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Threshold for experimental registration algorithm </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>was ist das? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>was ist das? </dd></dl>
 
 </div>
 </div>
@@ -2166,13 +2172,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="ThreadLocalize_8h_source.html">ThreadLocalize.h</a></li>
+<li>src/<a class="el" href="ThreadLocalize_8cpp.html">ThreadLocalize.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 5 2018 18:27:11 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 6 2018 15:07:02 for ohm_tsd_slam_ref by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

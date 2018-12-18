@@ -1,7 +1,8 @@
 <map id="src/SlamNode.cpp" name="src/SlamNode.cpp">
-<area shape="rect" id="node2" href="$SlamNode_8h.html" title="SlamNode.h" alt="" coords="831,80,925,107"/>
-<area shape="rect" id="node28" href="$ThreadMapping_8h.html" title="ThreadMapping.h" alt="" coords="3404,163,3526,189"/>
-<area shape="rect" id="node30" href="$ThreadGrid_8h.html" title="ThreadGrid.h" alt="" coords="3282,163,3378,189"/>
-<area shape="rect" id="node8" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="1275,163,1396,189"/>
-<area shape="rect" id="node9" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="3368,260,3477,287"/>
+<area shape="rect" id="node2" href="$SlamNode_8h.html" title="SlamNode.h" alt="" coords="2480,80,2574,107"/>
+<area shape="rect" id="node28" href="$ThreadMapping_8h.html" title="ThreadMapping.h" alt="" coords="2846,163,2969,189"/>
+<area shape="rect" id="node30" href="$ThreadGrid_8h.html" title="ThreadGrid.h" alt="" coords="2994,163,3090,189"/>
+<area shape="rect" id="node8" href="$ThreadLocalize_8h.html" title="ThreadLocalize.h" alt="" coords="1851,163,1972,189"/>
+<area shape="rect" id="node9" href="$ThreadSLAM_8h.html" title="ThreadSLAM.h" alt="" coords="2754,260,2864,287"/>
+<area shape="rect" id="node11" href="$OdometryAnalyzer_8h.html" title="OdometryAnalyzer.h" alt="" coords="2109,260,2249,287"/>
 </map>

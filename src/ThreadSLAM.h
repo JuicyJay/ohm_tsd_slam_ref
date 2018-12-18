@@ -25,6 +25,7 @@ class ThreadSLAM
 public:
 	/**
 	 * Constructor
+	 * @param: reference to single tsdgrid _grid instantiated in SlamNode to pass it on to the other threads
 	 */
 	ThreadSLAM(obvious::TsdGrid& grid);
 
@@ -54,6 +55,7 @@ protected:
 
 	/**
 	 * Abstract method connected to Boost threading functionality
+	 *
 	 */
 	virtual void eventLoop(void) = 0;
 
