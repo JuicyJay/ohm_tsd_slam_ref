@@ -115,6 +115,8 @@ ThreadLocalize::ThreadLocalize(obvious::TsdGrid* grid, ThreadMapping* mapper, ro
 
   prvNh.param<int>(_nameSpace + "registration_mode", iVar, ICP);
 
+  _regMode = static_cast<EnumRegModes>(iVar);
+
   //Align laserscans
   switch(_regMode)
   {
@@ -151,6 +153,7 @@ ThreadLocalize::ThreadLocalize(obvious::TsdGrid* grid, ThreadMapping* mapper, ro
   _filterDist			= new obvious::DistanceFilter(distFilterMax, distFilterMin, icpIterations - 10);
   _filterReciprocal		= new obvious::ReciprocalFilter();
   _estimator 			= new obvious::ClosedFormEstimator2D();
+
 
   //configure ICP
   _filterBounds 		= new obvious::OutOfBoundsFilter2D(grid->getMinX(), grid->getMaxX(), grid->getMinY(), grid->getMaxY());
@@ -200,15 +203,16 @@ void ThreadLocalize::laserCallBack(const sensor_msgs::LaserScan& scan)
     this->init(*scanCopy);
     ROS_INFO_STREAM("Localizer(" << _nameSpace << ") initialized -> running...\n");
 
-    if(_useOdomRescue) _odomAnalyzer->odomRescueInit();
+	    if(_useOdomRescue)
+	    	_odomAnalyzer->odomRescueInit();
 
-    _stampLaserOld = scan.header.stamp;
-  }
-  else
-  {
-    _dataMutex.lock();
-    _laserData.push_front(scanCopy);
-    _dataMutex.unlock();
+	    _stampLaserOld = scan.header.stamp;
+	  }
+	  else
+	  {
+	    _dataMutex.lock();
+	    _laserData.push_front(scanCopy);
+	    _dataMutex.unlock();
 
     this->unblock();	//Method from ThreadSLAM to set a thread from sleep mode to run mode
   }
@@ -269,7 +273,8 @@ void ThreadLocalize::eventLoop(void)
     _dataMutex.unlock();
 
     //odom rescue
-    if(_useOdomRescue) _odomAnalyzer->odomRescueUpdate();
+    if(_useOdomRescue)
+    	_odomAnalyzer->odomRescueUpdate();
 
     const unsigned int measurementSize = _sensor->getRealMeasurementSize();
 
@@ -291,8 +296,12 @@ void ThreadLocalize::eventLoop(void)
       continue;
     }
 
+    std::cout << "reached breakpoint 6" << std::endl;
+
     //get current scan
     const unsigned int validScenePoints = _sensor->dataToCartesianVectorMask(_scene, _maskS);
+
+    std::cout << "reached breakpoint 7" << std::endl;
 
     /**
      * Create Point Matrices with structure [x1 y1; x2 y2; ..]
@@ -313,6 +322,7 @@ void ThreadLocalize::eventLoop(void)
     //analyze registration result
     _tf.stamp_ = ros::Time::now();
     const bool regErrorT = isRegistrationError(&T, _trnsMax, _rotMax);
+
     if(regErrorT)
     {
       ROS_ERROR_STREAM("Localizer(" << _nameSpace << ") registration error! \n");
@@ -362,10 +372,12 @@ void ThreadLocalize::init(const sensor_msgs::LaserScan& scan)
   //const double startY	= _gridWidth * 0.5 + _yOffset + localYoffset;  //todo da muss doch gridheight nei??
   const double startY	= _gridHeight * 0.5 + _yOffset + localYoffset;
   double tf[9] 			= {std::cos(phi), 	-std::sin(phi), 	startX,
-  	  	  	  	  	  	  std::sin(phi), 	std::cos(phi),
+  	  	  	  	  	  	  std::sin(phi), 	std::cos(phi),		startY,
   	  	  	  	  	  	  0,				0,					1};
   obvious::Matrix Tinit(3,3);
   Tinit.setData(tf);
+
+  std::cout << __PRETTY_FUNCTION__ << "T" << Tinit << std::endl;
 
   double inc 			= scan.angle_increment;
   double angle_min		= scan.angle_min;
@@ -414,6 +426,7 @@ obvious::Matrix ThreadLocalize::doRegistration(obvious::SensorPolar2D* sensor,
   {
   case ICP:
 	  //no pre-registration
+	  break;
   case EXP:
 	  //todo: check normals N for matching function (Daniel Ammon, Tobias Fink)
 	  T = _RandomNormalMatcher->match(M, _maskM, NULL, S, _maskS, obvious::deg2rad(_ranPhiMax), _trnsMax, sensor->getAngularResolution());
@@ -461,7 +474,8 @@ obvious::Matrix ThreadLocalize::doRegistration(obvious::SensorPolar2D* sensor,
   _icp->iterate(&rms, &pairs, &it, &T44);
   T = _icp->getFinalTransformation();
 
-  if(_useOdomRescue && _odomTfIsValid) _odomAnalyzer->odomRescueCheck(T);
+  if(_useOdomRescue && _odomTfIsValid)
+	  _odomAnalyzer->odomRescueCheck(T);
 
   return T;
 }
